@@ -105,14 +105,44 @@ export function dadaSuggestions(exclude?: string): string[] {
     .slice(0, 3);
 }
 
+const CANCER_KEYS = [
+  { slug: "breast", keys: ["breast"] },
+  { slug: "cervical", keys: ["cervical", "cervix", "hpv"] },
+  { slug: "prostate", keys: ["prostate"] },
+  { slug: "liver", keys: ["liver", "hepatitis"] },
+  { slug: "colorectal", keys: ["colorectal", "bowel", "colon"] },
+] as const;
+
+export function shouldFocusCurrentCancer(question: string, cancer?: Cancer | null): boolean {
+  if (!cancer) return false;
+  const extra = question.toLowerCase();
+  const namesThis = CANCER_KEYS.find((item) => item.slug === cancer.slug)?.keys ?? [cancer.slug];
+  if (namesThis.some((key) => extra.includes(key))) return true;
+  if (CANCER_KEYS.some((item) => item.slug !== cancer.slug && item.keys.some((key) => extra.includes(key)))) {
+    return false;
+  }
+  if (
+    /what is cancer|cancer in general|prevent cancer|causes? of cancer|how does cancer|define cancer/.test(extra)
+  ) {
+    return false;
+  }
+  return true;
+}
+
 function isHealthQuestion(text: string): boolean {
   return /cancer|tumor|tumour|lump|screen|chemo|radio|vaccine|hpv|hepatitis|clinic|health|symptom|treat|heredit|family|gene|stress|sugar|diet|chemo|dose|drug|pain|bleed|urine|liver|breast|cervix|prostate|bowel|colon/i.test(
     text,
   );
 }
 
-function topicAnswer(question: string): string | null {
+function topicAnswer(question: string, cancer?: Cancer | null): string | null {
   const extra = question.toLowerCase();
+  if (/what is cancer/.test(extra) && !CANCER_KEYS.some((item) => item.keys.some((key) => extra.includes(key)))) {
+    return t("learn.dadaAnswerWhatIsCancer");
+  }
+  if (/prevent|lower (the )?risk|avoid/.test(extra) && !shouldFocusCurrentCancer(question, cancer)) {
+    return t("learn.dadaAnswerPreventCancer");
+  }
   if (/sugar|sweet|feed\s+cancer/.test(extra)) return t("learn.dadaAnswerSugar");
   if (/stress|worry|anxious|anxiety/.test(extra)) return t("learn.dadaAnswerStress");
   if (/heredit|inherit|genes?|family history|genetic/.test(extra)) return t("learn.dadaAnswerHeredity");
@@ -131,25 +161,26 @@ export function matchDadaReply(
   quizItems: QuizQuestion[] = quiz,
 ): DadaFallback {
   const suggestions = dadaSuggestions(question);
-  const topic = topicAnswer(question);
+  const topic = topicAnswer(question, preferredCancer);
   if (topic) return { answer: topic, suggestions };
 
   const extra = question.toLowerCase();
   const words = tokens(question);
   const preferred = preferredCancer?.slug;
+  const focusCurrent = shouldFocusCurrentCancer(question, preferredCancer);
 
   type Candidate = { score: number; text: string; closer?: string };
   const candidates: Candidate[] = [];
 
   for (const item of allCancers) {
-    const boost = item.slug === preferred ? 2 : 0;
+    const boost = focusCurrent && item.slug === preferred ? 2 : 0;
     candidates.push({ score: boost, text: item.summary, closer: item.name });
     for (const line of item.signs) candidates.push({ score: boost, text: line, closer: item.name });
     for (const line of item.prevention) candidates.push({ score: boost, text: line, closer: item.name });
   }
 
   for (const myth of allMyths) {
-    const boost = myth.cancer === preferred || myth.cancer === "general" ? 2 : 0;
+    const boost = myth.cancer === "general" || (focusCurrent && myth.cancer === preferred) ? 2 : 0;
     candidates.push({
       score: boost,
       text: `${myth.fact} ${myth.what_to_do}`,
@@ -159,7 +190,7 @@ export function matchDadaReply(
 
   for (const item of quizItems) {
     const correct = item.choices[item.answer] ?? "";
-    const boost = item.cancer === preferred ? 2 : 0;
+    const boost = focusCurrent && item.cancer === preferred ? 2 : 0;
     candidates.push({ score: boost, text: `${item.question} ${correct}`, closer: item.cancer });
   }
 
@@ -169,7 +200,7 @@ export function matchDadaReply(
     candidate.score += hits;
   }
 
-  if (preferredCancer) {
+  if (preferredCancer && focusCurrent) {
     if (extra.includes("sign") || extra.includes("symptom") || extra.includes("watch")) {
       candidates.unshift({
         score: 99,

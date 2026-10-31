@@ -171,6 +171,8 @@
     "dadaAnswerScreeningCost": "Menya does not list a single price for screening. In Rwanda, some screening is offered through public programmes and Mutuelle de Santé. Ask your local health centre or a community health worker what is free or low-cost near you.",
     "dadaAnswerChemo": "Chemotherapy is a medicine treatment given by trained health workers to target fast-growing cancer cells. The plan is different for each person, and we cannot give doses or promise a cure. Ask an oncology nurse or doctor to explain the plan and possible side effects.",
     "dadaAnswerGeneralHealth": "Cancer is a disease of cells, and many kinds can be treated, especially when found early. Screening and vaccines help for some cancers. For your own body, a health worker is the right person to advise you.",
+    "dadaAnswerWhatIsCancer": "Cancer is a disease of cells that grow in a way they should not. There are many kinds, including breast, cervical, prostate, liver, and bowel cancer. Found early, many can be treated. Screening and vaccines help for some kinds. A health worker can explain what this means for you.",
+    "dadaAnswerPreventCancer": "You can lower the chance of some cancers with screening, vaccines, and everyday habits. Do not smoke, keep a balanced diet, and store grains dry to reduce mould. Get the HPV vaccine and cervical screening when offered, and ask about hepatitis B vaccination. Know what is normal for your body. See a health worker if a new change lasts.",
     "quizTitle": "Quick quiz",
     "quizProgress": "Question {current} of {total}",
     "quizCorrect": "That’s right.",

@@ -94,7 +94,7 @@ export function DadaChat({ cancer }: DadaChatProps) {
         {messages.map((message, index) => (
           <div
             key={`${message.role}-${index}`}
-            className={`rounded-xl px-4 py-3 font-body-sm text-body-sm ${
+            className={`rounded-xl px-4 py-3 font-body-sm text-body-sm whitespace-pre-wrap break-words ${
               message.role === "dada" ? "bg-primary-soft text-text self-start" : "bg-surface border border-border text-text self-end"
             }`}
           >

@@ -3,11 +3,12 @@ const TIMEOUT_MS = 20_000;
 
 const DADA_RULES = `You are Dada, the calm AI guide inside Menya.
 Use the Menya facts first (the verified data passed in). For other general cancer and health questions, answer with well-established, widely accepted health information, in simple words.
+If the question is about cancer in general, answer for cancer in general. Only focus on the current cancer if the question is about it.
 Never diagnose. Never say someone has or does not have cancer. Never give drug doses. Never promise cures.
-When someone describes symptoms, gently say to see a health worker.
+Mention seeing a health worker once, at the end. Do not repeat that advice, and do not say it in every sentence.
 Say "I'm not sure about that. Please ask a health worker." only for questions outside cancer and health, or when you are truly unsure.
 Use simple, kind words. Never scary. Reply in English.
-Keep answers to 3 to 5 short sentences.
+Keep answers to 3 to 5 short sentences. Finish every sentence. Never stop mid-word.
 If someone mentions wanting to harm themselves, show a gentle message and a local helpline. Do not continue normal chat.`;
 
 export const DADA_UNSURE = "I'm not sure about that. Please ask a health worker.";
@@ -46,11 +47,11 @@ async function generateOnce(prompt: string, apiKey: string): Promise<GemmaResult
             parts: [{ text: `${DADA_RULES}\n\n${prompt}` }],
           },
         ],
-        generationConfig: {
-          temperature: 0.3,
-          maxOutputTokens: 700,
-          thinkingConfig: { thinkingLevel: "minimal" },
-        },
+          generationConfig: {
+            temperature: 0.3,
+            maxOutputTokens: 1024,
+            thinkingConfig: { thinkingLevel: "minimal" },
+          },
       }),
     });
 
@@ -96,6 +97,35 @@ export async function askGemma(prompt: string): Promise<GemmaResult> {
     return generateOnce(prompt, apiKey);
   }
   return first;
+}
+
+const WORKER_ADVICE = /health worker|see a (doctor|nurse|clinic)|go to a (clinic|hospital)/i;
+
+export function polishDadaAnswer(text: string): string {
+  const cleaned = text.replace(/\s+/g, " ").trim();
+  if (!cleaned) return cleaned;
+
+  const parts = cleaned.split(/(?<=[.!?])\s+/);
+  const complete: string[] = [];
+  for (const part of parts) {
+    const sentence = part.trim();
+    if (!sentence) continue;
+    if (/[.!?]$/.test(sentence)) complete.push(sentence);
+  }
+
+  if (complete.length === 0) return "";
+
+  const unique: string[] = [];
+  for (const sentence of complete) {
+    const key = sentence.toLowerCase();
+    if (unique.some((item) => item.toLowerCase() === key)) continue;
+    unique.push(sentence);
+  }
+
+  const advice = unique.filter((sentence) => WORKER_ADVICE.test(sentence));
+  const rest = unique.filter((sentence) => !WORKER_ADVICE.test(sentence));
+  const ordered = advice.length > 0 ? [...rest, advice[advice.length - 1]] : rest;
+  return ordered.join(" ").trim();
 }
 
 export function parseJsonFromText(text: string): unknown | null {
