@@ -10,12 +10,28 @@ import { Input } from "@/components/ui/Input";
 import { createClient } from "@/lib/supabase/client";
 import { t } from "@/lib/i18n";
 
-function authMessage(message: string, isSignUp: boolean) {
-  const lower = message.toLowerCase();
-  if (lower.includes("already") || lower.includes("registered")) return t("login.signUpError");
+function authMessage(error: { message?: string; code?: string }, isSignUp: boolean) {
+  const lower = (error.message ?? "").toLowerCase();
+  const code = (error.code ?? "").toLowerCase();
+  if (
+    code === "user_already_exists" ||
+    code === "email_exists" ||
+    lower.includes("already registered") ||
+    lower.includes("already been registered") ||
+    lower.includes("user already")
+  ) {
+    return t("login.signUpExists");
+  }
+  if (code === "invalid_credentials" || lower.includes("invalid login") || lower.includes("invalid credentials")) {
+    return t("login.authError");
+  }
   if (lower.includes("anonymous")) return t("login.guestError");
-  if (lower.includes("confirm")) return t("login.confirmEmail");
+  if (code === "email_not_confirmed" || lower.includes("confirm")) return t("login.confirmEmail");
   return isSignUp ? t("login.signUpError") : t("login.authError");
+}
+
+function isExistingAccount(user: { identities?: { id?: string }[] | null } | null | undefined) {
+  return Boolean(user && Array.isArray(user.identities) && user.identities.length === 0);
 }
 
 export function LoginSignInForm() {
@@ -60,18 +76,16 @@ export function LoginSignInForm() {
           options: { data: { name: name.trim() } },
         });
         if (signUpError) {
-          setError(authMessage(signUpError.message, true));
+          setError(authMessage(signUpError, true));
+          return;
+        }
+        if (isExistingAccount(data.user)) {
+          setError(t("login.signUpExists"));
           return;
         }
         if (!data.session) {
-          const { error: signInError } = await supabase.auth.signInWithPassword({
-            email: trimmedEmail,
-            password,
-          });
-          if (signInError) {
-            setError(t("login.confirmEmail"));
-            return;
-          }
+          setError(t("login.confirmEmail"));
+          return;
         }
         await goHome();
         return;
@@ -82,7 +96,7 @@ export function LoginSignInForm() {
         password,
       });
       if (signInError) {
-        setError(authMessage(signInError.message, false));
+        setError(authMessage(signInError, false));
         return;
       }
       await goHome();
@@ -181,42 +195,12 @@ export function LoginSignInForm() {
             <Icon icon={ArrowRight} />
           </Button>
         </form>
-        <div className="relative my-6 flex items-center justify-center">
-          <div className="w-full h-px bg-border" />
-          <span className="absolute px-3 bg-surface font-label-sm text-label-sm text-muted uppercase tracking-wider">
-            {t("common.or")}
-          </span>
-        </div>
-        <Button variant="surface" className="gap-3" type="button">
-          <svg className="w-5 h-5 flex-shrink-0" viewBox="0 0 24 24" aria-hidden>
-            <path
-              d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.8-2.4 3.68v3.05h3.88c2.27-2.09 3.665-5.17 3.665-9.17z"
-              fill="#4285F4"
-            />
-            <path
-              d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"
-              fill="#34A853"
-            />
-            <path
-              d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.14-1.55.38-2.27V6.58H1.25C.45 8.18 0 9.99 0 12s.45 3.82 1.25 5.42l4.03-3.15z"
-              fill="#FBBC05"
-            />
-            <path
-              d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"
-              fill="#EA4335"
-            />
-          </svg>
-          {t("login.google")}
-        </Button>
-        <div className="mt-4 flex justify-center">
-          <button
-            type="button"
-            onClick={continueAsGuest}
-            className="group px-4 py-2 bg-primary-soft hover:bg-lavender transition-colors rounded-full flex items-center gap-2 text-teal font-label-md text-label-md min-h-11 disabled:opacity-60"
-          >
+        <div className="mt-6 flex flex-col gap-2">
+          <Button variant="surface" type="button" disabled={working} onClick={continueAsGuest}>
             <Icon icon={Unlock} />
-            <span className="font-semibold underline underline-offset-4">{t("login.guest")}</span>
-          </button>
+            {t("login.guest")}
+          </Button>
+          <p className="font-body-sm text-body-sm text-muted text-center">{t("login.guestHint")}</p>
         </div>
       </div>
       <div className="mt-8 text-center">

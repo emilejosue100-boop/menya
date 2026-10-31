@@ -19,7 +19,7 @@
 - `FeatureCard` — Home Learn/Share/Help cards
 - `MythCard` — Home myth of the day from `lib/data` (Supabase, JSON fallback)
 - `HomeHeroSearch` — Ask Dada search (UI only)
-- `LoginSignInForm` — Email + password sign-in/sign-up; guest = anonymous; clear errors
+- `LoginSignInForm` — Email + password sign-in/sign-up; full-width guest button; no Google login
 - `AgeChips` — Kids/Teens/Adults/Elders, stores `?age=` (default adults); on `/learn` and `/learn/[cancer]`
 - `CancerGrid` — 5 cancer cards
 - `FactSheet` — Signs and risk lists
@@ -39,7 +39,7 @@
 | Route | Status |
 | --- | --- |
 | `/` | done (story welcome: Amina, numbers, three ways, final call) |
-| `/login` | done (Supabase email + guest) |
+| `/login` | done (email + password; guest; Google login removed) |
 | `/learn` | done (Supabase/JSON) |
 | `/learn/[cancer]` | done (Ask Dada via `/api/ask`) |
 | `/share` | done (match via `/api/match`) |
