@@ -1,7 +1,17 @@
 import { NextResponse } from "next/server";
+import { askGemma, parseJsonFromText } from "@/lib/ai";
 import { loadOrganisations, loadSupportGroups } from "@/lib/data";
-import { askGemini, parseJsonObject } from "@/lib/gemini";
 import { buildHelpPlaces, matchPlaceIds } from "@/lib/help";
+
+function extractIds(parsed: unknown): string[] {
+  if (Array.isArray(parsed)) {
+    return parsed.filter((id): id is string => typeof id === "string");
+  }
+  if (parsed && typeof parsed === "object" && Array.isArray((parsed as { ids?: unknown }).ids)) {
+    return (parsed as { ids: unknown[] }).ids.filter((id): id is string => typeof id === "string");
+  }
+  return [];
+}
 
 export async function POST(request: Request) {
   try {
@@ -32,13 +42,12 @@ Only use ids from this list. Never invent ids, names, or phone numbers. If nothi
 Situation: ${situation}
 Places: ${JSON.stringify(compact)}`;
 
-    const generated = await askGemini(prompt, { json: true });
-    const parsed = generated ? parseJsonObject(generated) : null;
-    const rawIds = Array.isArray(parsed?.ids) ? parsed.ids : [];
-    const ids = rawIds.filter((id): id is string => typeof id === "string" && allowedIds.has(id));
+    const generated = await askGemma(prompt);
+    const parsed = generated ? parseJsonFromText(generated) : null;
+    const ids = extractIds(parsed).filter((id) => allowedIds.has(id));
 
     if (ids.length > 0) {
-      return NextResponse.json({ ids, source: "gemini" });
+      return NextResponse.json({ ids, source: "gemma" });
     }
 
     return NextResponse.json({ ids: fallbackIds, source: "fallback" });

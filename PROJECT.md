@@ -38,7 +38,7 @@ Part	Tool
 Frontend	Next.js (App Router), TypeScript, Tailwind CSS
 UI design	Google Stitch (exports kept in /design)
 Database	Supabase (Postgres)
-AI guide (chat, matching, help picking)	Gemini via Google AI Studio API
+AI guide (chat, matching, help picking)	Gemma via Google AI Studio
 Multilingual dataset (myths, lessons)	Adaption (Adaptive Data + Blueprint rules)
 Voice	ElevenLabs (English, Swahili; Kinyarwanda to be tested)
 SMS for basic phones	Africa's Talking
@@ -68,7 +68,7 @@ English only for now; Kinyarwanda and Swahili come later.
   /features        FeatureCard, MythCard, SurvivorCard, HelpCard, HelpMap, DadaChat
 /data              seed JSON files
 /locales           en.json, rw.json, sw.json
-/lib               supabase/, data.ts, gemini.ts, i18n.ts, helpers
+/lib               supabase/, data.ts, ai.ts, i18n.ts, helpers
 /supabase          schema.sql and seed.sql for the SQL editor
 /public/images     logo, illustrations, icons
 6. Data (Supabase tables)
@@ -97,7 +97,7 @@ AFRICASTALKING_API_KEY=
 Learn it: open the breast cancer card, flip the "curse" myth, ask Dada a question
 Share it: get matched with a survivor and play her voice message
 Find help: type her situation, watch the Kigali pins light up
-30s The tech: Gemini + Adaption for African languages, SMS for basic phones
+30s The tech: Gemma via Google AI Studio + Adaption for African languages, SMS for basic phones
 End: "Learn it. Share it. Find help."
 
 Record a backup video as soon as the demo works.

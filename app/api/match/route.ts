@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
+import { askGemma, parseJsonObject } from "@/lib/ai";
 import { loadSurvivors } from "@/lib/data";
-import { askGemini, parseJsonObject } from "@/lib/gemini";
 import { rankSurvivors, type MatchQuery } from "@/lib/share";
 
 export async function POST(request: Request) {
@@ -37,26 +37,26 @@ Only use an id from this list. Never invent an id.
 Form: who=${body.who ?? "myself"}, cancer=${query.cancer}, language=${body.language ?? "English"}, country=${query.country}, city=${query.city}
 Survivors: ${JSON.stringify(compact)}`;
 
-    const generated = await askGemini(prompt, { json: true });
+    const generated = await askGemma(prompt);
     const parsed = generated ? parseJsonObject(generated) : null;
-    const geminiId = typeof parsed?.id === "string" ? parsed.id : "";
-    const geminiReason = typeof parsed?.reason === "string" ? parsed.reason.trim() : "";
+    const gemmaId = typeof parsed?.id === "string" ? parsed.id : "";
+    const gemmaReason = typeof parsed?.reason === "string" ? parsed.reason.trim() : "";
 
-    const best = allowedIds.has(geminiId)
-      ? (survivors.find((person) => person.id === geminiId) ?? scored)
+    const best = allowedIds.has(gemmaId)
+      ? (survivors.find((person) => person.id === gemmaId) ?? scored)
       : scored;
 
     if (!best) {
-      return NextResponse.json({ id: null, reason: "", otherIds: [] });
+      return NextResponse.json({ id: null, reason: "", otherIds: [], source: "fallback" });
     }
 
     const otherIds = ranked.filter((person) => person.id !== best.id).slice(0, 2).map((person) => person.id);
 
     return NextResponse.json({
       id: best.id,
-      reason: geminiReason,
+      reason: gemmaReason,
       otherIds,
-      source: allowedIds.has(geminiId) && geminiReason ? "gemini" : "fallback",
+      source: allowedIds.has(gemmaId) && gemmaReason ? "gemma" : "fallback",
     });
   } catch {
     return NextResponse.json({ id: null, reason: "", otherIds: [], source: "fallback" });

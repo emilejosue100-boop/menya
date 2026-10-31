@@ -27,7 +27,7 @@
 - `DadaChat` — `/api/ask` then keyword fallback
 - `Quiz` — 3 questions, then a badge and Try again
 - `SurvivorMatchForm` — `/api/match` then scored matching
-- `SurvivorCard` — Demo survivor profile, Gemini reason when present
+- `SurvivorCard` — Demo survivor profile, Gemma reason when present
 - `SupportGroupList` — WhatsApp demo links
 - `HelpSearch` — `/api/help` then keyword match; multi filters
 - `HelpMap` / `HelpMapCanvas` — Leaflet OSM map of Kigali (dynamic, no SSR)
@@ -49,7 +49,7 @@
 - `lib/supabase/client.ts` + `server.ts` — `NEXT_PUBLIC_SUPABASE_URL` + `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`
 - `lib/data.ts` — reads Supabase; falls back to `/data` JSON
 - `supabase/schema.sql` + `seed.sql` — run in the SQL editor
-- `lib/gemini.ts` — server only, `MODEL = "PASTE_MODEL_ID_HERE"`, 15s timeout
+- `lib/ai.ts` — Gemma `gemma-4-26b-a4b-it` via Google AI Studio, 10s timeout, rules in the user message, JSON extracted from text
 - `app/api/ask/route.ts` — Dada + safety rules; keyword fallback
 - `app/api/match/route.ts` — JSON survivor id + reason; scoring fallback
 - `app/api/help/route.ts` — situation → place ids; keyword fallback
@@ -63,7 +63,7 @@
 
 ## Not finished / known problems
 
-- Paste a Gemini model id in `lib/gemini.ts` (until then Ask/Match/Help use keyword fallback)
+- Ask/Match/Help use Gemma; keyword/scoring fallback if Gemma fails, times out, or returns bad JSON
 - Run `schema.sql` then `seed.sql` in Supabase; enable Anonymous sign-in for guest; turn off Confirm email for a fast demo
 - WhatsApp buttons are demo links
 - Voice and SMS not built

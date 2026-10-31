@@ -62,6 +62,7 @@ export function HelpSearch({ places }: HelpSearchProps) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ situation: trimmed }),
+        signal: AbortSignal.timeout(12_000),
       });
       if (response.ok) {
         const payload = (await response.json()) as { ids?: string[] };

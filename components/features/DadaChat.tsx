@@ -12,7 +12,7 @@ import { type Cancer, type Myth, matchDadaReply } from "@/lib/learn";
 import { t } from "@/lib/i18n";
 import { images } from "@/lib/images";
 
-type Message = { role: "user" | "dada"; text: string };
+type Message = { role: "user" | "dada"; text: string; credit?: boolean };
 
 type DadaChatProps = {
   cancer: Cancer;
@@ -39,7 +39,7 @@ export function DadaChat({ cancer, myths }: DadaChatProps) {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: trimmed, cancerSlug: cancer.slug }),
-        signal: AbortSignal.timeout(4000),
+        signal: AbortSignal.timeout(12_000),
       });
       if (response.ok) {
         const payload = (await response.json()) as { answer?: string };
@@ -49,7 +49,7 @@ export function DadaChat({ cancer, myths }: DadaChatProps) {
       // Keep the keyword match so the demo never goes quiet.
     }
 
-    setMessages((current) => [...current, { role: "dada", text: answer }]);
+    setMessages((current) => [...current, { role: "dada", text: answer, credit: true }]);
     setTyping(false);
   }
 
@@ -78,6 +78,9 @@ export function DadaChat({ cancer, myths }: DadaChatProps) {
             }`}
           >
             {message.text}
+            {message.credit ? (
+              <p className="font-label-sm text-label-sm text-muted mt-2">{t("learn.dadaByGemma")}</p>
+            ) : null}
           </div>
         ))}
         {typing ? (

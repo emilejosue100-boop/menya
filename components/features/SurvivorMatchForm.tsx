@@ -53,6 +53,7 @@ export function SurvivorMatchForm({ cancers, groups, survivors }: SurvivorMatchF
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ who, cancer, language: "English", country, city }),
+        signal: AbortSignal.timeout(12_000),
       });
       if (response.ok) {
         const payload = (await response.json()) as { id?: string | null; reason?: string; otherIds?: string[] };

@@ -15,7 +15,7 @@ When done, say in 2 to 4 lines what you changed and which files.
 If something is unclear, ask one short question instead of guessing.
 Stack
 Next.js App Router, TypeScript, Tailwind CSS
-Supabase for data, Gemini via Google AI Studio for AI
+Supabase for data, Gemma via Google AI Studio for AI
 Leaflet + OpenStreetMap for the map
 English only for now; Kinyarwanda and Swahili come later.
 Server components by default; add "use client" only when needed (state, events, map)
@@ -96,7 +96,7 @@ Tagline: "Learn it. Share it. Find help."
 Motto: "No one should face cancer in silence."
 AI and safety rules (Dada)
 
-Every Gemini call must follow these rules in its system prompt:
+Every Gemma call must follow these rules at the top of the user message:
 
 Answer only from the verified data passed in (myths, cancer facts, organisations). Never invent facts, organisations, phone numbers, or places.
 Never diagnose. Never say someone has or does not have cancer.
@@ -106,7 +106,7 @@ Use simple, kind words. Never scary. Reply in the user's language (English, Kiny
 Keep answers short: 3 to 5 sentences.
 If someone mentions wanting to harm themselves, show a gentle message and a local helpline. Do not continue normal chat.
 
-For matching and Find help, Gemini only picks from records in Supabase and returns their ids. The frontend shows the real records.
+For matching and Find help, Gemma only picks from records in Supabase and returns their ids. The frontend shows the real records.
 
 Every page must have
 The footer: "Menya shares health information, not medical advice. Always see a health worker."
