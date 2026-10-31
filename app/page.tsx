@@ -1,149 +1,138 @@
 import Image from "next/image";
-import {
-  BadgeCheck,
-  BookOpen,
-  CircleCheck,
-  HeartHandshake,
-  Hospital,
-  MapPin,
-  MessageCircle,
-  Navigation,
-  Users,
-  Wallet,
-} from "lucide-react";
+import Link from "next/link";
+import { BookOpen, HeartHandshake, MapPin } from "lucide-react";
 import { FeatureCard } from "@/components/features/FeatureCard";
-import { HomeHeroSearch } from "@/components/features/HomeHeroSearch";
-import { MythCard } from "@/components/features/MythCard";
-import { PageShell } from "@/components/layout/PageShell";
-import { Badge } from "@/components/ui/Badge";
+import { Button } from "@/components/ui/Button";
+import { Card } from "@/components/ui/Card";
 import { Icon } from "@/components/ui/Icon";
-import { loadMyths } from "@/lib/data";
 import { t } from "@/lib/i18n";
 import { images } from "@/lib/images";
 
-export default async function HomePage() {
-  const myths = await loadMyths();
-  const mythOfDay = myths.find((item) => item.id === "general-myth-1") ?? myths[0];
+const inner = "w-full max-w-[1200px] mx-auto px-4 md:px-8";
+const storyLink =
+  "inline-flex min-h-11 items-center justify-center font-label-md text-label-md text-primary duration-200 ease-out hover:opacity-80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-xl px-2";
+
+const stats = [
+  { value: "home.statDeathsValue", label: "home.statDeathsLabel" },
+  { value: "home.statLateValue", label: "home.statLateLabel" },
+  { value: "home.statDistressValue", label: "home.statDistressLabel" },
+] as const;
+
+export default function HomePage() {
+  const storyParagraphs = t("home.storyBody").split("\n\n");
+
   return (
-    <PageShell>
-        <section className="relative w-full bg-primary-soft rounded-2xl p-6 overflow-hidden border border-border">
-          <div className="absolute -right-20 -top-20 w-96 h-96 rounded-full bg-lavender/50 blur-3xl pointer-events-none" />
-          <div className="absolute -left-12 -bottom-12 w-80 h-80 rounded-full bg-coral/20 blur-3xl pointer-events-none" />
-          <div className="relative z-10 flex flex-col gap-6">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-              <div className="flex items-center gap-4">
-                <div className="relative w-20 h-20 shrink-0">
-                  <Image
-                    src={images.dadaAvatar}
-                    alt={t("home.dadaAlt")}
-                    width={80}
-                    height={80}
-                    unoptimized
-                    className="w-20 h-20 rounded-full object-cover aspect-square"
-                  />
-                  <span className="absolute bottom-0 right-0 w-6 h-6 bg-teal rounded-full flex items-center justify-center">
-                    <Icon icon={CircleCheck} size="sm" className="text-surface" />
-                  </span>
-                </div>
-                <div className="flex flex-col">
-                  <div className="inline-flex items-center gap-2 mb-1 flex-wrap">
-                    <Badge tone="primary">{t("home.dadaBadge")}</Badge>
-                    <span className="text-teal font-label-sm text-label-sm flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-teal" /> {t("home.ready")}
-                    </span>
-                  </div>
-                  <h1 className="font-headline-lg text-headline-lg text-text tracking-tight">{t("home.greeting")}</h1>
-                  <p className="font-body-md text-body-md text-muted max-w-[65ch]">{t("home.heroLine")}</p>
-                </div>
-              </div>
-              <div className="hidden lg:flex items-center gap-2 px-4 py-2 bg-surface/80 rounded-xl text-muted font-label-md text-label-md">
-                <Icon icon={MapPin} className="text-coral" />
-                <span>{t("home.location")}</span>
-              </div>
+    <main className="w-full">
+      <section className="w-full bg-primary-soft">
+        <div className={`${inner} py-12 md:py-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center`}>
+          <div className="flex flex-col gap-6">
+            <p className="font-label-sm text-label-sm text-primary">{t("home.heroLabel")}</p>
+            <div className="flex flex-col gap-4">
+              <h1 className="font-headline-lg text-headline-lg text-text tracking-tight max-w-[18ch]">
+                {t("motto")}
+              </h1>
+              <p className="font-body-md text-body-md text-text max-w-[65ch]">{t("home.heroSupport")}</p>
             </div>
-            <HomeHeroSearch />
+            <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4">
+              <Button href="/learn" className="sm:w-auto sm:min-w-48">
+                {t("home.learnCta")}
+              </Button>
+              <a href="#aminas-story" className={storyLink}>
+                {t("home.readStory")}
+              </a>
+            </div>
+          </div>
+          <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden bg-lavender">
+            <Image
+              src={images.loginHero}
+              alt={t("home.heroImageAlt")}
+              fill
+              unoptimized
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 560px"
+              priority
+            />
+          </div>
+        </div>
+      </section>
+
+      <div className={`${inner} py-12 md:py-16 flex flex-col gap-12 md:gap-16`}>
+        <section id="aminas-story" className="scroll-mt-[88px] max-w-[640px] flex flex-col gap-6">
+          <h2 className="font-headline-md text-headline-md text-text">{t("home.storyTitle")}</h2>
+          <div className="flex flex-col gap-4">
+            {storyParagraphs.map((paragraph) => (
+              <p key={paragraph.slice(0, 32)} className="font-body-md text-body-md text-text max-w-[65ch]">
+                {paragraph}
+              </p>
+            ))}
+          </div>
+          <p className="font-body-sm text-body-sm text-muted max-w-[65ch]">{t("home.storyNote")}</p>
+        </section>
+
+        <section className="flex flex-col gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 items-stretch">
+            {stats.map((stat) => (
+              <Card key={stat.value} className="h-full flex flex-col gap-3 hover:border-lavender">
+                <p className="font-headline-lg text-headline-lg text-primary tabular-nums">{t(stat.value)}</p>
+                <p className="font-body-md text-body-md text-text max-w-[65ch]">{t(stat.label)}</p>
+              </Card>
+            ))}
+          </div>
+          <p className="font-body-sm text-body-sm text-muted max-w-[65ch]">{t("home.statNote")}</p>
+        </section>
+
+        <section className="flex flex-col items-center text-center gap-4 max-w-[640px] mx-auto">
+          <h2 className="font-headline-md text-headline-md text-text">{t("home.whyTitle")}</h2>
+          <p className="font-body-md text-body-md text-text max-w-[65ch]">{t("home.whyBody")}</p>
+        </section>
+
+        <section className="flex flex-col gap-6">
+          <h2 className="font-headline-md text-headline-md text-text">{t("home.howTitle")}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+            <FeatureCard
+              icon={<Icon icon={BookOpen} size="lg" />}
+              iconWrapperClassName="bg-primary-soft text-primary"
+              title={t("home.learnTitle")}
+              description={t("home.learnDescription")}
+              ctaLabel={t("home.learnCta")}
+              ctaHref="/learn"
+              ctaVariant="primary"
+            />
+            <FeatureCard
+              icon={<Icon icon={HeartHandshake} size="lg" />}
+              iconWrapperClassName="bg-coral/20 text-coral"
+              title={t("home.shareTitle")}
+              description={t("home.shareDescription")}
+              ctaLabel={t("home.shareCta")}
+              ctaHref="/share"
+              ctaVariant="coral"
+            />
+            <FeatureCard
+              icon={<Icon icon={MapPin} size="lg" />}
+              iconWrapperClassName="bg-teal/20 text-teal"
+              title={t("home.helpTitle")}
+              description={t("home.helpDescription")}
+              ctaLabel={t("home.helpCta")}
+              ctaHref="/help"
+              ctaVariant="teal"
+            />
           </div>
         </section>
+      </div>
 
-        <section className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full items-stretch">
-          <FeatureCard
-            icon={<Icon icon={BookOpen} size="xl" />}
-            iconWrapperClassName="bg-primary-soft text-primary"
-            badge={
-              <Badge tone="teal">
-                <Icon icon={BadgeCheck} size="sm" />
-                {t("home.learnBadge")}
-              </Badge>
-            }
-            title={t("home.learnTitle")}
-            description={t("home.learnDescription")}
-            checklist={[
-              {
-                icon: <Icon icon={CircleCheck} className="text-teal" />,
-                text: t("home.learnItem1"),
-              },
-              {
-                icon: <Icon icon={CircleCheck} className="text-teal" />,
-                text: t("home.learnItem2"),
-              },
-            ]}
-            ctaLabel={t("home.learnCta")}
-            ctaHref="/learn"
-            ctaVariant="primary"
-          />
-          <FeatureCard
-            icon={<Icon icon={HeartHandshake} size="xl" />}
-            iconWrapperClassName="bg-coral/20 text-coral"
-            badge={
-              <Badge tone="coral">
-                <Icon icon={Users} size="sm" />
-                {t("home.shareBadge")}
-              </Badge>
-            }
-            title={t("home.shareTitle")}
-            description={t("home.shareDescription")}
-            checklist={[
-              {
-                icon: <Icon icon={MessageCircle} className="text-coral" />,
-                text: t("home.shareItem1"),
-              },
-              {
-                icon: <Icon icon={Users} className="text-coral" />,
-                text: t("home.shareItem2"),
-              },
-            ]}
-            ctaLabel={t("home.shareCta")}
-            ctaHref="/share"
-            ctaVariant="coral"
-          />
-          <FeatureCard
-            icon={<Icon icon={Navigation} size="xl" />}
-            iconWrapperClassName="bg-teal/20 text-teal"
-            badge={
-              <Badge tone="teal">
-                <Icon icon={Hospital} size="sm" />
-                {t("home.helpBadge")}
-              </Badge>
-            }
-            title={t("home.helpTitle")}
-            description={t("home.helpDescription")}
-            checklist={[
-              {
-                icon: <Icon icon={MapPin} className="text-teal" />,
-                text: t("home.helpItem1"),
-              },
-              {
-                icon: <Icon icon={Wallet} className="text-teal" />,
-                text: t("home.helpItem2"),
-              },
-            ]}
-            ctaLabel={t("home.helpCta")}
-            ctaHref="/help"
-            ctaVariant="teal"
-          />
-        </section>
-
-        {mythOfDay ? <MythCard myth={mythOfDay} /> : null}
-    </PageShell>
+      <section className="w-full bg-primary-soft">
+        <div className={`${inner} py-12 md:py-16 flex flex-col items-center text-center gap-6`}>
+          <h2 className="font-headline-md text-headline-md text-text">{t("home.finalHeadline")}</h2>
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4 w-full sm:w-auto">
+            <Button href="/learn" className="sm:w-auto sm:min-w-48">
+              {t("home.learnCta")}
+            </Button>
+            <Link href="/learn/breast#ask-dada" className={storyLink}>
+              {t("home.talkToDada")}
+            </Link>
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }

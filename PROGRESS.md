@@ -37,7 +37,7 @@
 
 | Route | Status |
 | --- | --- |
-| `/` | done (auth gate, data from `lib/data`) |
+| `/` | done (story welcome: Amina, numbers, three ways, final call) |
 | `/login` | done (Supabase email + guest) |
 | `/learn` | done (Supabase/JSON) |
 | `/learn/[cancer]` | done (Ask Dada via `/api/ask`) |

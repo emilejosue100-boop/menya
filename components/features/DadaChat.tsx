@@ -75,7 +75,7 @@ export function DadaChat({ cancer }: DadaChatProps) {
   }
 
   return (
-    <Card>
+    <Card id="ask-dada" className="scroll-mt-[88px]">
       <div className="flex items-center gap-3 mb-4">
         <Image
           src={images.dadaAvatar}
