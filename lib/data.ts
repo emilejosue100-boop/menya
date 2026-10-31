@@ -1,5 +1,6 @@
 import cancersJson from "@/data/cancers.json";
 import mythsJson from "@/data/myths.json";
+import internationalJson from "@/data/international.json";
 import organisationsJson from "@/data/organisations.json";
 import quizJson from "@/data/quiz.json";
 import supportGroupsJson from "@/data/support_groups.json";
@@ -7,7 +8,7 @@ import survivorsJson from "@/data/survivors.json";
 import { createClient } from "@/lib/supabase/server";
 import type { Cancer, Myth, QuizQuestion } from "@/lib/learn";
 import type { SupportGroup, Survivor } from "@/lib/share";
-import type { Organisation } from "@/lib/help";
+import type { InternationalOrg, Organisation } from "@/lib/help";
 
 function hasSupabase() {
   return Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY);
@@ -51,6 +52,10 @@ export async function loadSupportGroups(): Promise<SupportGroup[]> {
 
 export async function loadOrganisations(): Promise<Organisation[]> {
   return loadTable<Organisation>("organisations", organisationsJson);
+}
+
+export async function loadInternational(): Promise<InternationalOrg[]> {
+  return internationalJson as InternationalOrg[];
 }
 
 export async function loadCancer(slug: string): Promise<Cancer | undefined> {

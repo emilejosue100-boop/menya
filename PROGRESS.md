@@ -29,9 +29,10 @@
 - `SurvivorMatchForm` — `/api/match` then scored matching
 - `SurvivorCard` — Demo survivor profile, Gemma reason when present
 - `SupportGroupList` — WhatsApp demo links
-- `HelpSearch` — `/api/help` then keyword match; multi filters
+- `HelpSearch` — `/api/help` then keyword match; Near you / International tabs; multi filters
 - `HelpMap` / `HelpMapCanvas` — Leaflet OSM map of Kigali (dynamic, no SSR)
 - `HelpCard` — Org/group cards synced with pins
+- `InternationalCard` — international programmes from `data/international.json`
 
 ## Pages
 
@@ -42,7 +43,7 @@
 | `/learn` | done (Supabase/JSON) |
 | `/learn/[cancer]` | done (Ask Dada via `/api/ask`) |
 | `/share` | done (match via `/api/match`) |
-| `/help` | done (help via `/api/help`) |
+| `/help` | done (local map + international programmes via `/api/help`) |
 
 ## Data and API
 
@@ -52,7 +53,7 @@
 - `lib/ai.ts` — Gemma `gemma-4-26b-a4b-it` via Google AI Studio, 10s timeout, rules in the user message, JSON extracted from text
 - `app/api/ask/route.ts` — Dada + safety rules; keyword fallback
 - `app/api/match/route.ts` — JSON survivor id + reason; scoring fallback
-- `app/api/help/route.ts` — situation → place ids; keyword fallback
+- `app/api/help/route.ts` — situation → local and international ids; keyword fallback
 - `proxy.ts` — not signed in → `/login`; after sign-in → `/`
 
 ## Design polish

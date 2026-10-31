@@ -1,0 +1,62 @@
+[
+  {
+    "id": "int-max-foundation",
+    "name": "The Max Foundation",
+    "what_they_do": "Helps people with some chronic cancers get access to donated medicines through partner programmes.",
+    "how_it_reaches_you": "Through partner hospitals and patient access programmes.",
+    "who_can_ask": ["patients", "hospitals", "health_workers"],
+    "website": "https://www.themaxfoundation.org/",
+    "type": "medicines",
+    "review_note": "Information to check before use"
+  },
+  {
+    "id": "int-gavi",
+    "name": "Gavi",
+    "what_they_do": "Helps countries provide vaccines, including the HPV vaccine that can prevent most cervical cancer.",
+    "how_it_reaches_you": "Through your country's vaccination programme.",
+    "who_can_ask": ["governments", "health_workers"],
+    "website": "https://www.gavi.org/",
+    "type": "vaccines",
+    "review_note": "Information to check before use"
+  },
+  {
+    "id": "int-iaea-rays",
+    "name": "IAEA Rays of Hope",
+    "what_they_do": "Helps countries get radiotherapy equipment and training so more people can be treated closer to home.",
+    "how_it_reaches_you": "Through national hospitals and cancer centres chosen by governments.",
+    "who_can_ask": ["governments", "hospitals"],
+    "website": "https://www.iaea.org/services/rays-of-hope",
+    "type": "equipment",
+    "review_note": "Information to check before use"
+  },
+  {
+    "id": "int-acs-chai",
+    "name": "American Cancer Society with Clinton Health Access Initiative",
+    "what_they_do": "Works with countries so more people can get quality cancer medicines at a lower cost.",
+    "how_it_reaches_you": "Through ministries of health and public hospitals.",
+    "who_can_ask": ["governments", "hospitals"],
+    "website": "https://www.clintonhealthaccess.org/",
+    "type": "medicines",
+    "review_note": "Information to check before use"
+  },
+  {
+    "id": "int-uicc",
+    "name": "UICC",
+    "what_they_do": "A global network of cancer organisations that shares knowledge and supports national cancer control.",
+    "how_it_reaches_you": "Through member organisations, hospitals, and cancer societies in your country.",
+    "who_can_ask": ["hospitals", "health_workers", "governments"],
+    "website": "https://www.uicc.org/",
+    "type": "network",
+    "review_note": "Information to check before use"
+  },
+  {
+    "id": "int-aortic",
+    "name": "AORTIC",
+    "what_they_do": "An African network of cancer professionals working to improve cancer care, research, and training across the continent.",
+    "how_it_reaches_you": "Through African hospitals, researchers, and professional meetings.",
+    "who_can_ask": ["health_workers", "hospitals"],
+    "website": "https://aortic-africa.org/",
+    "type": "network",
+    "review_note": "Information to check before use"
+  }
+]

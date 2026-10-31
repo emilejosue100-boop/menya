@@ -24,6 +24,8 @@ type ButtonAsButton = BaseProps &
 
 type ButtonAsLink = BaseProps & {
   href: string;
+  target?: string;
+  rel?: string;
 };
 
 const shell =
@@ -39,8 +41,14 @@ export function Button({
   const classes = `${shell} ${variantClasses[variant]} ${className}`;
 
   if (href) {
+    const linkRest = rest as ButtonAsLink;
     return (
-      <Link href={href} className={`w-full ${classes}`}>
+      <Link
+        href={href}
+        target={linkRest.target}
+        rel={linkRest.target === "_blank" ? (linkRest.rel ?? "noopener noreferrer") : linkRest.rel}
+        className={`w-full ${classes}`}
+      >
         {children}
       </Link>
     );
