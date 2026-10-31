@@ -8,18 +8,22 @@ import { Card } from "@/components/ui/Card";
 import { Chip } from "@/components/ui/Chip";
 import { Icon } from "@/components/ui/Icon";
 import { Input } from "@/components/ui/Input";
-import { type Cancer, type Myth, matchDadaReply } from "@/lib/learn";
+import { type Cancer, matchDadaReply } from "@/lib/learn";
 import { t } from "@/lib/i18n";
 import { images } from "@/lib/images";
 
-type Message = { role: "user" | "dada"; text: string; credit?: boolean };
+type Message = {
+  role: "user" | "dada";
+  text: string;
+  credit?: boolean;
+  suggestions?: string[];
+};
 
 type DadaChatProps = {
   cancer: Cancer;
-  myths: Myth[];
 };
 
-export function DadaChat({ cancer, myths }: DadaChatProps) {
+export function DadaChat({ cancer }: DadaChatProps) {
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState<Message[]>([{ role: "dada", text: t("learn.dadaIntro") }]);
   const [typing, setTyping] = useState(false);
@@ -33,23 +37,40 @@ export function DadaChat({ cancer, myths }: DadaChatProps) {
     setInput("");
     setTyping(true);
 
-    let answer = matchDadaReply(trimmed, cancer, myths) ?? t("learn.dadaFallback");
+    const local = matchDadaReply(trimmed, cancer);
+    let answer = local.answer;
+    let credit = false;
+    let suggestions = local.suggestions;
+
     try {
       const response = await fetch("/api/ask", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: trimmed, cancerSlug: cancer.slug }),
-        signal: AbortSignal.timeout(12_000),
+        signal: AbortSignal.timeout(22_000),
       });
       if (response.ok) {
-        const payload = (await response.json()) as { answer?: string };
+        const payload = (await response.json()) as {
+          answer?: string;
+          source?: string;
+          suggestions?: string[];
+        };
         if (payload.answer) answer = payload.answer;
+        credit = payload.source === "gemma";
+        if (Array.isArray(payload.suggestions) && payload.suggestions.length > 0) {
+          suggestions = payload.suggestions;
+        } else if (payload.source === "gemma") {
+          suggestions = [];
+        }
       }
     } catch {
-      // Keep the keyword match so the demo never goes quiet.
+      // Keep the local match so the demo never goes quiet.
     }
 
-    setMessages((current) => [...current, { role: "dada", text: answer, credit: true }]);
+    setMessages((current) => [
+      ...current,
+      { role: "dada", text: answer, credit, suggestions: suggestions.length > 0 ? suggestions : undefined },
+    ]);
     setTyping(false);
   }
 
@@ -80,6 +101,18 @@ export function DadaChat({ cancer, myths }: DadaChatProps) {
             {message.text}
             {message.credit ? (
               <p className="font-label-sm text-label-sm text-muted mt-2">{t("learn.dadaByGemma")}</p>
+            ) : null}
+            {message.suggestions && message.suggestions.length > 0 ? (
+              <div className="mt-3 flex flex-col gap-2">
+                <p className="font-label-sm text-label-sm text-muted">{t("learn.dadaTryThese")}</p>
+                <div className="flex flex-wrap gap-2">
+                  {message.suggestions.map((chip) => (
+                    <Chip key={chip} onClick={() => replyTo(chip)}>
+                      {chip}
+                    </Chip>
+                  ))}
+                </div>
+              </div>
             ) : null}
           </div>
         ))}

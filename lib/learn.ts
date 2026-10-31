@@ -1,6 +1,7 @@
 import cancers from "@/data/cancers.json";
 import myths from "@/data/myths.json";
 import quiz from "@/data/quiz.json";
+import { t } from "@/lib/i18n";
 
 export const AGE_LEVELS = ["kids", "teens", "adults", "elders"] as const;
 export type AgeLevel = (typeof AGE_LEVELS)[number];
@@ -84,41 +85,120 @@ function tokens(text: string): string[] {
   return text
     .toLowerCase()
     .split(/[^a-z0-9]+/)
-    .filter((word) => word.length > 3 && !STOP.has(word));
+    .filter((word) => word.length > 3 && !STOP.has(word) && word !== "cancer");
 }
 
-export function matchDadaReply(question: string, cancer: Cancer, cancerMyths: Myth[]): string | null {
-  const words = tokens(question);
-  if (words.length === 0) return null;
+export type DadaFallback = { answer: string; suggestions: string[] };
 
-  const candidates: { score: number; text: string }[] = [
-    { score: 0, text: cancer.summary },
-    ...cancer.signs.map((line) => ({ score: 0, text: line })),
-    ...cancer.prevention.map((line) => ({ score: 0, text: line })),
-    ...cancerMyths.flatMap((myth) => [
-      { score: 0, text: myth.fact },
-      { score: 0, text: myth.what_to_do },
-    ]),
-  ];
+const SUGGEST_KEYS = [
+  "learn.dadaSuggestSugar",
+  "learn.dadaSuggestStress",
+  "learn.dadaSuggestHeredity",
+  "learn.dadaSuggestScreening",
+  "learn.dadaSuggestChemo",
+] as const;
 
-  for (const candidate of candidates) {
-    const hay = tokens(`${candidate.text} ${cancer.name} ${cancer.summary}`).join(" ");
-    candidate.score = words.filter((word) => hay.includes(word) || candidate.text.toLowerCase().includes(word)).length;
+export function dadaSuggestions(exclude?: string): string[] {
+  const skip = (exclude ?? "").trim().toLowerCase();
+  return SUGGEST_KEYS.map((key) => t(key))
+    .filter((question) => question.toLowerCase() !== skip)
+    .slice(0, 3);
+}
+
+function isHealthQuestion(text: string): boolean {
+  return /cancer|tumor|tumour|lump|screen|chemo|radio|vaccine|hpv|hepatitis|clinic|health|symptom|treat|heredit|family|gene|stress|sugar|diet|chemo|dose|drug|pain|bleed|urine|liver|breast|cervix|prostate|bowel|colon/i.test(
+    text,
+  );
+}
+
+function topicAnswer(question: string): string | null {
+  const extra = question.toLowerCase();
+  if (/sugar|sweet|feed\s+cancer/.test(extra)) return t("learn.dadaAnswerSugar");
+  if (/stress|worry|anxious|anxiety/.test(extra)) return t("learn.dadaAnswerStress");
+  if (/heredit|inherit|genes?|family history|genetic/.test(extra)) return t("learn.dadaAnswerHeredity");
+  if (/cost|price|pay|mutuelle|expensive|how much/.test(extra) && /screen|test|clinic|care|treat/.test(extra)) {
+    return t("learn.dadaAnswerScreeningCost");
   }
+  if (/chemo|chemotherapy/.test(extra)) return t("learn.dadaAnswerChemo");
+  return null;
+}
+
+export function matchDadaReply(
+  question: string,
+  preferredCancer?: Cancer | null,
+  allMyths: Myth[] = myths,
+  allCancers: Cancer[] = cancers,
+  quizItems: QuizQuestion[] = quiz,
+): DadaFallback {
+  const suggestions = dadaSuggestions(question);
+  const topic = topicAnswer(question);
+  if (topic) return { answer: topic, suggestions };
 
   const extra = question.toLowerCase();
-  if (extra.includes("sign") || extra.includes("symptom") || extra.includes("watch")) {
-    candidates.unshift({ score: 99, text: cancer.signs.join(" ") });
+  const words = tokens(question);
+  const preferred = preferredCancer?.slug;
+
+  type Candidate = { score: number; text: string; closer?: string };
+  const candidates: Candidate[] = [];
+
+  for (const item of allCancers) {
+    const boost = item.slug === preferred ? 2 : 0;
+    candidates.push({ score: boost, text: item.summary, closer: item.name });
+    for (const line of item.signs) candidates.push({ score: boost, text: line, closer: item.name });
+    for (const line of item.prevention) candidates.push({ score: boost, text: line, closer: item.name });
   }
-  if (extra.includes("risk") || extra.includes("prevent") || extra.includes("lower")) {
-    candidates.unshift({ score: 99, text: cancer.prevention.join(" ") });
+
+  for (const myth of allMyths) {
+    const boost = myth.cancer === preferred || myth.cancer === "general" ? 2 : 0;
+    candidates.push({
+      score: boost,
+      text: `${myth.fact} ${myth.what_to_do}`,
+      closer: myth.cancer,
+    });
   }
-  if (extra.includes("myth") || extra.includes("true") || extra.includes("believe")) {
-    const first = cancerMyths[0];
-    if (first) candidates.unshift({ score: 99, text: first.fact });
+
+  for (const item of quizItems) {
+    const correct = item.choices[item.answer] ?? "";
+    const boost = item.cancer === preferred ? 2 : 0;
+    candidates.push({ score: boost, text: `${item.question} ${correct}`, closer: item.cancer });
+  }
+
+  for (const candidate of candidates) {
+    const hay = tokens(candidate.text).join(" ");
+    const hits = words.filter((word) => hay.includes(word) || candidate.text.toLowerCase().includes(word)).length;
+    candidate.score += hits;
+  }
+
+  if (preferredCancer) {
+    if (extra.includes("sign") || extra.includes("symptom") || extra.includes("watch")) {
+      candidates.unshift({
+        score: 99,
+        text: `${preferredCancer.signs.join(". ")}. ${t("learn.dadaSeeWorker")}`,
+      });
+    }
+    if (extra.includes("risk") || extra.includes("prevent") || extra.includes("lower")) {
+      candidates.unshift({
+        score: 99,
+        text: `${preferredCancer.prevention.join(". ")}. ${t("learn.dadaSeeWorker")}`,
+      });
+    }
+    if (extra.includes("myth") || extra.includes("true") || extra.includes("believe")) {
+      const first = allMyths.find((myth) => myth.cancer === preferred) ?? allMyths.find((myth) => myth.cancer === "general");
+      if (first) {
+        candidates.unshift({ score: 99, text: `${first.fact} ${first.what_to_do}` });
+      }
+    }
   }
 
   const best = candidates.sort((a, b) => b.score - a.score)[0];
-  if (!best || best.score < 1) return null;
-  return best.text;
+  if (best && best.score >= 2) {
+    const answer = /[.!?]$/.test(best.text.trim()) ? best.text.trim() : `${best.text.trim()}.`;
+    return { answer, suggestions };
+  }
+
+  if (isHealthQuestion(question)) {
+    return { answer: t("learn.dadaAnswerGeneralHealth"), suggestions };
+  }
+
+  return { answer: t("learn.dadaFallback"), suggestions };
 }

@@ -24,7 +24,7 @@
 - `CancerGrid` — 5 cancer cards
 - `FactSheet` — Signs and risk lists
 - `MythCardFlip` — Flip card (tap/click/keyboard); speaker shows “Audio coming soon”
-- `DadaChat` — `/api/ask` then keyword fallback
+- `DadaChat` — `/api/ask` with full cancer facts; Gemma 20s timeout; local fallback + example questions
 - `Quiz` — 3 questions, then a badge and Try again
 - `SurvivorMatchForm` — `/api/match` then scored matching
 - `SurvivorCard` — Demo survivor profile, Gemma reason when present

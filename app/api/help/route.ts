@@ -43,7 +43,7 @@ Situation: ${situation}
 Places: ${JSON.stringify(compact)}`;
 
     const generated = await askGemma(prompt);
-    const parsed = generated ? parseJsonFromText(generated) : null;
+    const parsed = generated.text ? parseJsonFromText(generated.text) : null;
     const ids = extractIds(parsed).filter((id) => allowedIds.has(id));
 
     if (ids.length > 0) {

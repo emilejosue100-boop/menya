@@ -86,7 +86,7 @@ export default async function CancerLearnPage({ params, searchParams }: CancerPa
           )}
         </section>
 
-        <DadaChat cancer={cancer} myths={myths} />
+        <DadaChat cancer={cancer} />
         <Quiz questions={questions} cancerName={cancer.name} />
     </PageShell>
   );

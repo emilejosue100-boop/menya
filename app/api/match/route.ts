@@ -38,7 +38,7 @@ Form: who=${body.who ?? "myself"}, cancer=${query.cancer}, language=${body.langu
 Survivors: ${JSON.stringify(compact)}`;
 
     const generated = await askGemma(prompt);
-    const parsed = generated ? parseJsonObject(generated) : null;
+    const parsed = generated.text ? parseJsonObject(generated.text) : null;
     const gemmaId = typeof parsed?.id === "string" ? parsed.id : "";
     const gemmaReason = typeof parsed?.reason === "string" ? parsed.reason.trim() : "";
 

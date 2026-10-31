@@ -98,12 +98,12 @@ AI and safety rules (Dada)
 
 Every Gemma call must follow these rules at the top of the user message:
 
-Answer only from the verified data passed in (myths, cancer facts, organisations). Never invent facts, organisations, phone numbers, or places.
-Never diagnose. Never say someone has or does not have cancer.
-Always suggest seeing a health worker when someone describes symptoms.
-If the answer is not in the data, say: "I'm not sure about that. Please ask a health worker."
+Use the Menya facts first. For other general cancer and health questions, answer with well-established, widely accepted health information, in simple words.
+Never diagnose. Never say someone has or does not have cancer. Never give drug doses. Never promise cures.
+When someone describes symptoms, gently say to see a health worker.
+Say "I'm not sure about that. Please ask a health worker." only for questions outside cancer and health, or when truly unsure.
 Use simple, kind words. Never scary. Reply in the user's language (English, Kinyarwanda, or Swahili).
-Keep answers short: 3 to 5 sentences.
+Keep answers to 3 to 5 short sentences.
 If someone mentions wanting to harm themselves, show a gentle message and a local helpline. Do not continue normal chat.
 
 For matching and Find help, Gemma only picks from records in Supabase and returns their ids. The frontend shows the real records.
