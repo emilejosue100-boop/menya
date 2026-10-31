@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@config "../tailwind.config.ts";
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    overscroll-behavior: none;
+  }
+
+  ::selection {
+    background: #ede7fb;
+    color: #1f1a2e;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  @apply bg-background font-body-md text-text antialiased;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+  font-family: var(--font-inter), Inter, sans-serif;
+}
+
+.menya-pin-wrap {
+  background: transparent;
+  border: none;
+}

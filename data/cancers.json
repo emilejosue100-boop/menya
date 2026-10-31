@@ -1,0 +1,47 @@
+[
+  {
+    "slug": "breast",
+    "name": "Breast cancer",
+    "summary": "Cancer that starts in the breast. Finding it early gives people a much better chance of treatment.",
+    "signs": ["A new lump in the breast or underarm", "Change in breast size or shape", "Skin dimpling or nipple discharge"],
+    "prevention": ["Know what is normal for your body", "Ask about screening from age 40, or earlier if your family has had breast cancer", "See a health worker if you notice a new lump"],
+    "icon": "volunteer_activism",
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "slug": "cervical",
+    "name": "Cervical cancer",
+    "summary": "Cancer of the cervix. Screening and the HPV vaccine can prevent most cases.",
+    "signs": ["Bleeding after sex or between periods", "Unusual vaginal discharge", "Pain in the pelvis"],
+    "prevention": ["HPV vaccine for girls and boys when offered", "Regular screening (VIA or Pap) as advised locally", "Do not ignore unusual bleeding"],
+    "icon": "health_and_safety",
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "slug": "prostate",
+    "name": "Prostate cancer",
+    "summary": "Cancer of the prostate gland. It is more common in older men and can grow slowly.",
+    "signs": ["Trouble passing urine", "Getting up often at night to urinate", "Blood in urine or semen"],
+    "prevention": ["Talk to a health worker from age 50, or earlier with family history", "Do not ignore urine changes", "Ask about a simple blood test (PSA) if offered"],
+    "icon": "male",
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "slug": "liver",
+    "name": "Liver cancer",
+    "summary": "Cancer that starts in the liver. Hepatitis vaccination and avoiding aflatoxins help lower risk.",
+    "signs": ["Pain on the right side of the belly", "Yellow skin or eyes", "Unexplained weight loss"],
+    "prevention": ["Hepatitis B vaccine", "Store grains and groundnuts dry to reduce mould", "Limit alcohol and seek care for hepatitis"],
+    "icon": "ecg_heart",
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "slug": "colorectal",
+    "name": "Colorectal cancer",
+    "summary": "Cancer of the colon or rectum. Screening and early care save lives.",
+    "signs": ["Blood in the stool", "A change in bowel habits that lasts", "Belly pain or unexplained weight loss"],
+    "prevention": ["Eat more fibre from plants", "Stay active", "Ask about screening if you are 50 or older, or have family history"],
+    "icon": "gastroenterology",
+    "review_note": "placeholder, needs review"
+  }
+]

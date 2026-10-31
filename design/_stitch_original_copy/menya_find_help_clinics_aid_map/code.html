@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Nunito+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-lowest": "#ffffff", "surface-variant": "#e8defa", "inverse-primary": "#cebdff", "on-tertiary-fixed-variant": "#005143", "error-container": "#ffdad6", "on-tertiary-container": "#85f5d9", "tertiary-container": "#00715f", "tertiary": "#005648", "outline": "#7a7584", "on-tertiary-fixed": "#00201a", "secondary-fixed": "#ffdad3", "on-primary-container": "#e7dcff", "surface-container-high": "#ede4ff", "on-tertiary": "#ffffff", "surface-tint": "#6749bc", "primary": "#5435a8", "on-error-container": "#93000a", "on-secondary-container": "#742413", "surface-container": "#f3eaff", "on-secondary": "#ffffff", "on-primary": "#ffffff", "on-error": "#ffffff", "primary-fixed-dim": "#cebdff", "primary-container": "#6d4fc2", "surface-container-highest": "#e8defa", "primary-fixed": "#e8ddff", "secondary-fixed-dim": "#ffb4a4", "tertiary-fixed": "#87f6db", "background": "#fdf7ff", "on-primary-fixed": "#21005e", "tertiary-fixed-dim": "#69dabf", "inverse-surface": "#332d42", "secondary": "#9d422f", "secondary-container": "#fd8c73", "on-primary-fixed-variant": "#4f2ea2", "on-secondary-fixed-variant": "#7e2b1a", "surface": "#fdf7ff", "on-surface-variant": "#494552", "surface-bright": "#fdf7ff", "error": "#ba1a1a", "on-background": "#1d182c", "inverse-on-surface": "#f5eeff", "outline-variant": "#cac4d4", "on-surface": "#1d182c", "on-secondary-fixed": "#3e0500", "surface-container-low": "#f8f1ff", "surface-dim": "#dfd6f2" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "space-xs": "0.25rem", "gutter": "1.5rem", "gutter-mobile": "1rem", "margin": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-md": "1rem", "space-xl": "2rem" }, "fontFamily": { "headline-sm": ["Nunito Sans"], "headline-lg-mobile": ["Nunito Sans"], "display-mobile": ["Nunito Sans"], "label-md": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "title-md": ["Nunito Sans"], "label-lg": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Nunito Sans"], "headline-md": ["Nunito Sans"], "label-sm": ["Inter"], "display": ["Nunito Sans"] }, "fontSize": { "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "0em", "fontWeight": "700" }], "display-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "body-md": ["16px", { "lineHeight": "25.6px", "fontWeight": "400" }], "title-md": ["18px", { "lineHeight": "26px", "fontWeight": "700" }], "label-lg": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }] } } } }</script></head><body class="bg-surface font-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant/40"><div class="h-[72px] max-w-[1200px] mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="Menya Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VumdXcVJpGmaAteMUIl5054rjeSjRGX2gNPYkkmtP-DWjK9yZeAQEvz9vQHhY1C4NxtVdIF70c9EBgvP08UbubSyH-Tejj8MBXSv1BsPxzF10L9GpLaMTx216u7AbuYE_4blD1pCFQrvGUlZj187S-y99XuysBRwrdJQwSuacaiPHPRCFuQ0L_oVy3G4iS17H1VfaAikJ9JcqFMlrQzkw_3MRu3FOV2YBzJfW6Vhg7"/><span class="font-title-md text-title-md text-primary font-bold tracking-tight">Menya</span></a></div><nav class="flex items-center gap-space-sm p-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-xl shadow-sm"><a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all rounded-xl" data-path="learn-it" href="#">Learn it</a><a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all rounded-xl" data-path="share-it" href="#">Share it</a><a aria-current="page" class="px-space-md py-space-sm transition-all bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-xl shadow-sm" data-path="find-help" href="#">Find help</a></nav><div class="flex items-center gap-space-md"><div class="relative flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-low rounded-xl text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-space-lg text-on-surface-variant">language</span><span>English</span><span class="material-symbols-outlined text-space-md text-on-surface-variant">expand_more</span></div><button aria-label="Notifications" class="relative p-space-xs rounded-full hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-space-lg">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary"></span></button><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRsZarBzsxjQ43RX5-ZmMbXoScbw_vfU6bfRgW9PxKvZcQAobjs256aqv0PVYw-20zsrwYzwFk9CuR7J5tH4r_f7Ie-LgPOAFJux31uFBIO8a5u_VYBtSFxxb91e0Z23LlucOac7g6YEymzcnlwJQi4meqFlx9ecLwQMhEns9hAbU2QdC7kbTY2cc8Mh6amcByj8vLhrnkRg8oUDa914T3CpqS4wbf3dPWTlGKR5lO"/></div></div></div></header><main class="w-full pt-[72px] bg-surface min-h-[calc(100vh-72px)]"><div class="flex flex-col w-full">
+<div class="w-full bg-surface py-space-xl">
+<div class="max-w-[1200px] mx-auto px-margin flex flex-col gap-space-xl">
+<!-- Context Ribbon & Page Header -->
+<div class="flex flex-col gap-space-md">
+<!-- Community Connection Ribbon -->
+<div class="w-full bg-surface-container-high rounded-xl p-space-md flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-7 rounded-full bg-secondary-container"></span>
+<div>
+<p class="font-label-lg text-label-lg text-primary">Over 48 verified cancer care points across Rwanda &amp; East Africa</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">All listed facilities accept Mutuelle de Santé (RSSB) or offer structured aid grants.</p>
+</div>
+</div>
+<div class="flex items-center gap-space-sm self-end md:self-auto">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Region:</span>
+<button class="flex items-center gap-space-xs px-space-sm py-1 rounded-full bg-surface-container-lowest text-primary font-label-md text-label-md shadow-sm hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-space-md text-tertiary">check_circle</span>
+<span>Rwanda National Registry</span>
+<span class="material-symbols-outlined text-space-md">expand_more</span>
+</button>
+</div>
+</div>
+<!-- Title & Subheading -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pt-space-xs">
+<div class="max-w-2xl">
+<div class="flex items-center gap-space-xs text-tertiary font-label-sm text-label-sm uppercase tracking-wider mb-1">
+<span class="material-symbols-outlined text-space-md" style="font-variation-settings: 'FILL' 1;">local_hospital</span>
+<span>Community Navigation Directory</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Find trusted cancer care and support near you</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Compassionate, verified guidance for screenings, subsidized treatments, and patient support networks across Rwanda.</p>
+</div>
+<div class="flex items-center gap-space-xs bg-surface-container-low px-space-md py-space-sm rounded-xl">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-md text-label-md text-on-surface">MOH Verified Directory 2025</span>
+</div>
+</div>
+<!-- Conversational Search Bar -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-space-xs shadow-md flex flex-col lg:flex-row items-stretch lg:items-center gap-space-xs">
+<div class="flex-1 flex items-center gap-space-sm px-space-md py-space-xs">
+<span class="material-symbols-outlined text-primary text-space-lg">search</span>
+<input class="w-full bg-transparent border-0 outline-none text-on-surface placeholder:text-outline font-body-md text-body-md py-2" id="helpSearchInput" placeholder="Tell us your situation (e.g. 'I need free cervical screening in Gasabo' or 'Financial support for chemotherapy')" type="text"/>
+</div>
+<div class="flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container-low rounded-lg mx-space-xs">
+<span class="material-symbols-outlined text-secondary text-space-md">location_on</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">Near Kigali, Rwanda</span>
+<button class="text-left font-label-sm text-label-sm text-primary hover:underline" type="button">Change location</button>
+</div>
+</div>
+<button class="h-12 px-space-lg bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg rounded-xl transition-all shadow-sm flex items-center justify-center gap-space-xs active:scale-[0.98]" type="button">
+<span class="material-symbols-outlined text-space-md">travel_explore</span>
+<span>Search Care</span>
+</button>
+</div>
+<!-- Filter Chips Row -->
+<div class="w-full overflow-x-auto no-scrollbar py-space-xs">
+<div class="flex items-center gap-space-sm min-w-max" id="filterChipsContainer">
+<button class="filter-chip active-filter px-space-md py-2 rounded-full font-label-md text-label-md bg-primary-container text-on-primary transition-all shadow-sm flex items-center gap-1.5" data-filter="all" type="button">
+<span class="material-symbols-outlined text-space-md">grid_view</span>
+<span>All Services</span>
+<span class="bg-primary/30 text-on-primary text-label-sm px-2 py-0.5 rounded-full ml-1">48</span>
+</button>
+<button class="filter-chip px-space-md py-2 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all flex items-center gap-1.5" data-filter="screening" type="button">
+<span class="material-symbols-outlined text-space-md text-tertiary">chips</span>
+<span>Free Screening</span>
+</button>
+<button class="filter-chip px-space-md py-2 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all flex items-center gap-1.5" data-filter="meds" type="button">
+<span class="material-symbols-outlined text-space-md text-secondary">medication</span>
+<span>Free &amp; Subsidized Drugs</span>
+</button>
+<button class="filter-chip px-space-md py-2 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all flex items-center gap-1.5" data-filter="vaccines" type="button">
+<span class="material-symbols-outlined text-space-md text-primary">vaccines</span>
+<span>HPV Vaccines</span>
+</button>
+<button class="filter-chip px-space-md py-2 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all flex items-center gap-1.5" data-filter="centers" type="button">
+<span class="material-symbols-outlined text-space-md text-tertiary">domain</span>
+<span>Treatment Centers</span>
+</button>
+<button class="filter-chip px-space-md py-2 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all flex items-center gap-1.5" data-filter="support" type="button">
+<span class="material-symbols-outlined text-space-md text-secondary">diversity_1</span>
+<span>Support Groups</span>
+</button>
+<button class="filter-chip px-space-md py-2 rounded-full font-label-md text-label-md bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all flex items-center gap-1.5" data-filter="transport" type="button">
+<span class="material-symbols-outlined text-space-md text-outline">airport_shuttle</span>
+<span>Patient Transport</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Interactive Map & Facility Radar -->
+<div class="relative w-full rounded-2xl overflow-hidden bg-surface-container-lowest shadow-md">
+<div class="p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md bg-surface-container-lowest">
+<div class="flex items-center gap-space-md">
+<div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-space-lg">explore</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Regional Oncology &amp; Screening Map</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Live geolocation view across Rwanda provinces with verified partner status.</p>
+</div>
+</div>
+<!-- Legend -->
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-space-xs text-tertiary font-label-sm text-label-sm">
+<span class="w-3 h-3 rounded-full bg-tertiary"></span>
+<span>Verified Ministry of Health Partner</span>
+</div>
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm">
+<span class="w-3 h-3 rounded-full bg-primary-container"></span>
+<span>Free Services Available</span>
+</div>
+<div class="flex items-center gap-space-xs text-secondary font-label-sm text-label-sm">
+<span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+<span>Pediatric &amp; Family Care</span>
+</div>
+</div>
+</div>
+<!-- Map Container -->
+<div class="relative w-full h-[400px] overflow-hidden bg-surface-container-high">
+<!-- Static Map visual base -->
+<div class="w-full h-full bg-cover bg-center" data-location="Kigali, Rwanda" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA2DJZqDQqaQEGjL0vyT9TS7jrU4L5_tlJl48Mcto4zbFXZNMviMD5DpHpmx42sbaX7lxIMF6ZI1VXlwLR5veBHPjROrgn4bwHs1A2mKgy_PJaru-pn038D05yx7zABJeFQrMX2P5goEIRTyTE12T5gTHvljLqBNkwp2_J0N93ZQljFY04-Qq31Q2HGxc7IXwMtjuQTmxyEG-ftxa5-vSfmOZo_hwS_0M3INVLRNi5z')"></div>
+<!-- Calm Lavender & Teal Map Overlays & Interactive Glowing Hub Pins -->
+<div class="absolute inset-0 bg-gradient-to-t from-primary/30 via-transparent to-surface-container-highest/30 pointer-events-none"></div>
+<!-- Interactive Glowing Pin 1: Kigali Central (CHUK / Kanombe) -->
+<div class="absolute top-[48%] left-[52%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+<div class="relative flex items-center justify-center">
+<div class="absolute w-12 h-12 rounded-full bg-primary/20 animate-ping"></div>
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary flex items-center justify-center shadow-lg transform transition-transform group-hover:scale-125">
+<span class="material-symbols-outlined text-space-md">health_and_safety</span>
+</div>
+</div>
+<div class="absolute top-10 left-1/2 -translate-x-1/2 bg-surface-container-lowest px-space-md py-space-xs rounded-xl shadow-xl whitespace-nowrap opacity-95 group-hover:opacity-100 transition-opacity">
+<p class="font-label-md text-label-md text-primary font-bold">Kigali Hub (CHUK &amp; Kanombe)</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">14 Verified Clinics • Mon-Fri</p>
+</div>
+</div>
+<!-- Interactive Glowing Pin 2: Butaro Cancer Center (Northern Province) -->
+<div class="absolute top-[22%] left-[45%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+<div class="relative flex items-center justify-center">
+<div class="absolute w-10 h-10 rounded-full bg-tertiary/25 animate-pulse"></div>
+<div class="w-7 h-7 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shadow-lg transform transition-transform group-hover:scale-125">
+<span class="material-symbols-outlined text-space-md">stars</span>
+</div>
+</div>
+<div class="absolute bottom-9 left-1/2 -translate-x-1/2 bg-surface-container-lowest px-space-md py-space-xs rounded-xl shadow-xl whitespace-nowrap opacity-95 group-hover:opacity-100 transition-opacity">
+<p class="font-label-md text-label-md text-tertiary font-bold">Butaro Center of Excellence</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Full Oncology • Inpatient Lodging</p>
+</div>
+</div>
+<!-- Interactive Glowing Pin 3: Kanombe Military Hospital / Radiotherapy Center -->
+<div class="absolute top-[58%] left-[58%] -translate-x-1/2 -translate-y-1/2 group cursor-pointer">
+<div class="relative flex items-center justify-center">
+<div class="w-6 h-6 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shadow-md transform transition-transform group-hover:scale-125">
+<span class="material-symbols-outlined text-sm">radiology</span>
+</div>
+</div>
+<div class="absolute top-8 left-1/2 -translate-x-1/2 bg-surface-container-lowest px-space-sm py-1 rounded-xl shadow-md whitespace-nowrap hidden group-hover:block">
+<p class="font-label-sm text-label-sm text-secondary font-bold">Rwanda Cancer Centre (Kanombe)</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Radiotherapy &amp; Linear Accelerators</p>
+</div>
+</div>
+<!-- Map Floating Navigation Helper -->
+<div class="absolute bottom-space-md left-space-md bg-surface-container-lowest/90 backdrop-blur-md px-space-md py-space-xs rounded-xl shadow-sm flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary animate-pulse"></span>
+<span class="font-label-sm text-label-sm text-on-surface">Displaying 18 verified centers within 45km of your location</span>
+</div>
+<!-- Map Zoom / Layer Controls -->
+<div class="absolute top-space-md right-space-md flex flex-col gap-1 bg-surface-container-lowest/90 backdrop-blur-md p-1 rounded-xl shadow-sm">
+<button aria-label="Zoom In" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-space-md">add</span>
+</button>
+<button aria-label="Zoom Out" class="w-8 h-8 rounded-lg flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-space-md">remove</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Help Provider Cards Grid -->
+<div class="flex flex-col gap-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Verified Care Providers &amp; Aid Organizations</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Carefully reviewed resources. Free eligibility assistance available at every point.</p>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<span>Sort by:</span>
+<button class="text-primary font-semibold hover:underline flex items-center gap-1" type="button">
+<span>Nearest to You</span>
+<span class="material-symbols-outlined text-space-md">arrow_drop_down</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-lg" id="providerCardsGrid">
+<!-- Card 1: Butaro Cancer Center of Excellence -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div class="flex flex-col gap-space-md">
+<!-- Top Badge and Image/Icon -->
+<div class="flex items-start justify-between gap-space-sm">
+<span class="px-space-sm py-1 rounded-full bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-space-md" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span>Verified Partner</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm text-outline">distance</span>
+<span>Burera District</span>
+</span>
+</div>
+<!-- Title & Lead -->
+<div>
+<h3 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Butaro Cancer Center of Excellence</h3>
+<p class="font-label-sm text-label-sm text-primary-container font-semibold mt-0.5">Partners In Health (PIH) &amp; Rwanda MOH</p>
+</div>
+<!-- Media Preview -->
+<div class="w-full h-36 rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern serene cancer hospital pavilion in the green rolling hills of Butaro Rwanda with compassionate Rwandan female nurse and doctor walking together in bright natural daylight, conveying human dignity and expert clinical care" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAERFOZZV9xZWNRuPOWDSktrBS3-SCsKp9XUbUXABb4fl9ERohyvFrlwe2GaJ9uUrn3OgIfeMqg-Ia-IkpPU4PHOlerc6OIEq8W36bLWlz_yQgbjRFX8I_M2ulouhj8vT33948Rk7mZdrptlOh7W3B9KxlIJOgYHJ3PVsMPRY7DYaiYq1fhvf4EcMnwzhu4Voh6FJ3vRfvsK2oJAzCPZ0JWfOFemrv-GUPuQr5UBJsJ"/>
+<div class="absolute bottom-2 left-2 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-0.5 rounded-md text-label-sm font-label-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-tertiary">bed</span>
+<span>150 Bed Inpatient Facility</span>
+</div>
+</div>
+<!-- Structured Breakdown -->
+<div class="flex flex-col gap-space-sm text-on-surface font-body-sm text-body-sm pt-space-xs">
+<!-- What they give -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">medical_services</span>
+<span>What they provide</span>
+</span>
+<p class="text-on-surface">Full oncology consultations, pathology, chemotherapy infusions, surgical recovery, and patient lodging.</p>
+</div>
+<!-- Who qualifies -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-tertiary font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">badge</span>
+<span>Who qualifies</span>
+</span>
+<p class="text-on-surface">Anyone diagnosed with suspected cancer. Fully covered by Mutuelle de Santé (Category 1, 2 &amp; 3) and direct free assistance programs.</p>
+</div>
+<!-- How to apply -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">how_to_reg</span>
+<span>How to access care</span>
+</span>
+<p class="text-on-surface">Transfer letter from your district hospital or walk-in triage unit. Dedicated hotline: <span class="font-semibold text-primary">+250 788 000 111</span>.</p>
+</div>
+</div>
+</div>
+<!-- Card Actions -->
+<div class="flex items-center gap-space-sm pt-space-md mt-space-md">
+<a class="h-12 flex-1 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs transition-colors shadow-sm" href="tel:+250788000111">
+<span class="material-symbols-outlined text-space-md">call</span>
+<span>Call clinic</span>
+</a>
+<button class="h-12 px-space-md rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-space-md">directions</span>
+<span>Directions</span>
+</button>
+</div>
+</div>
+<!-- Card 2: Kigali University Teaching Hospital (CHUK) Oncology Unit -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div class="flex flex-col gap-space-md">
+<!-- Top Badge and Distance -->
+<div class="flex items-start justify-between gap-space-sm">
+<span class="px-space-sm py-1 rounded-full bg-tertiary-container/15 text-tertiary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-space-md" style="font-variation-settings: 'FILL' 1;">local_hospital</span>
+<span>Verified Hospital</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm text-outline">distance</span>
+<span>Nyarugenge, Kigali</span>
+</span>
+</div>
+<!-- Title & Lead -->
+<div>
+<h3 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">CHUK Oncology Unit</h3>
+<p class="font-label-sm text-label-sm text-primary-container font-semibold mt-0.5">Centre Hospitalier Universitaire de Kigali</p>
+</div>
+<!-- Media Preview -->
+<div class="w-full h-36 rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Compassionate healthcare consultation room at Kigali teaching hospital with an African female specialist doctor gently discussing diagnostic reports with a calm patient under soft warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0HGJnbUzGbAc8Lya8Y842VX5OMJKnSCZHyzXPRIICQgb1w1O8VdsQ74keoIViwTyMXsdFIRlqFmntusIXP5DWzCMCMtz-9iaiMsp9X1fYYgyRDq01Qp_8-TR4q3c9-oYG1JR3UOKSZB3W8l7RZfgmItY0nj6YfOxD3Kj89S9G6FYE8ceW3ZWTHtLgRdoNqE5tVVPgXQI8FPIFPHGKNajz2yzSm2SELiswBzWYlEZ2"/>
+<div class="absolute bottom-2 left-2 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-0.5 rounded-md text-label-sm font-label-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-primary">schedule</span>
+<span>Daily Triage • 07:30 - 17:00</span>
+</div>
+</div>
+<!-- Structured Breakdown -->
+<div class="flex flex-col gap-space-sm text-on-surface font-body-sm text-body-sm pt-space-xs">
+<!-- What they give -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">medical_services</span>
+<span>What they provide</span>
+</span>
+<p class="text-on-surface">Digital mammography, tissue biopsy, adult chemotherapy, staging CT scans, and surgical oncology consultations.</p>
+</div>
+<!-- Who qualifies -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-tertiary font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">badge</span>
+<span>Who qualifies</span>
+</span>
+<p class="text-on-surface">All citizens and residents enrolled with Mutuelle de Santé (RSSB), RAMA/MMI, or private healthcare schemes.</p>
+</div>
+<!-- How to apply -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">how_to_reg</span>
+<span>How to access care</span>
+</span>
+<p class="text-on-surface">Obtain referral from your district health center. Specialized oncology outpatient runs Mon–Fri; acute triage open 24/7.</p>
+</div>
+</div>
+</div>
+<!-- Card Actions -->
+<div class="flex items-center gap-space-sm pt-space-md mt-space-md">
+<button class="h-12 flex-1 rounded-xl bg-primary-container hover:bg-primary text-on-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-space-md">calendar_month</span>
+<span>View hours &amp; contact</span>
+</button>
+<button class="h-12 px-space-md rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg flex items-center justify-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-space-md">map</span>
+<span>Map</span>
+</button>
+</div>
+</div>
+<!-- Card 3: Rwanda Children's Cancer Relief (RCCR) -->
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm hover:shadow-md transition-all flex flex-col justify-between group">
+<div class="flex flex-col gap-space-md">
+<!-- Top Badge and Distance -->
+<div class="flex items-start justify-between gap-space-sm">
+<span class="px-space-sm py-1 rounded-full bg-secondary-container/20 text-secondary font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-space-md" style="font-variation-settings: 'FILL' 1;">volunteer_activism</span>
+<span>Free Family Aid</span>
+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-0.5">
+<span class="material-symbols-outlined text-sm text-outline">pin_drop</span>
+<span>Kigali &amp; Nationwide</span>
+</span>
+</div>
+<!-- Title & Lead -->
+<div>
+<h3 class="font-title-md text-title-md text-on-surface group-hover:text-primary transition-colors">Rwanda Children's Cancer Relief</h3>
+<p class="font-label-sm text-label-sm text-secondary font-semibold mt-0.5">Registered Non-Profit Grassroots Advocacy</p>
+</div>
+<!-- Media Preview -->
+<div class="w-full h-36 rounded-xl overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Uplifting pediatric patient support center in Rwanda showing healthy smiling young girl drawing colorful artwork with a caring social worker volunteer in a sunny welcoming community room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeoKMejKUQ2_joAp68kMJi9WDNdQf_VFSaK1VMLfwBsqbymL6gObLRFmzyx-sJ-RqG-RY5N-tEcSdmoKDwogiby1x_sEd-e82cCbjsdcVuvLAt5vuK6idElSrnmNSm-rVSH32vCsyy4o3au432j3kO5FUMlYrk6-dQnKHjiHfX2xkO6yCjkbfrayMO_3wc-R2Evk4gxk9ic-q_sYXP_kEkZpTFqK2mEt7gA6kXqKWl"/>
+<div class="absolute bottom-2 left-2 bg-surface-container-lowest/90 backdrop-blur-sm px-2 py-0.5 rounded-md text-label-sm font-label-sm text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-sm text-secondary">child_care</span>
+<span>Ages 0–18 Full Support</span>
+</div>
+</div>
+<!-- Structured Breakdown -->
+<div class="flex flex-col gap-space-sm text-on-surface font-body-sm text-body-sm pt-space-xs">
+<!-- What they give -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">inventory_2</span>
+<span>What they provide</span>
+</span>
+<p class="text-on-surface">Nutritional food packages, essential medicine subsidies, emergency family transport stipends, and peer psycho-social counseling.</p>
+</div>
+<!-- Who qualifies -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-tertiary font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">badge</span>
+<span>Who qualifies</span>
+</span>
+<p class="text-on-surface">Any family with a child aged 0–18 currently receiving active cancer care at CHUK, Butaro, or King Faisal Hospital.</p>
+</div>
+<!-- How to apply -->
+<div class="bg-surface-container-low rounded-xl p-space-sm flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider flex items-center gap-1">
+<span class="material-symbols-outlined text-sm">how_to_reg</span>
+<span>How to access care</span>
+</span>
+<p class="text-on-surface">Direct phone intake or through your pediatric nurse social worker. Fast 24-hour family case approval.</p>
+</div>
+</div>
+</div>
+<!-- Card Actions -->
+<div class="flex items-center gap-space-sm pt-space-md mt-space-md">
+<button class="h-12 flex-1 rounded-xl bg-secondary-container hover:bg-secondary text-on-secondary font-label-lg text-label-lg flex items-center justify-center gap-space-xs transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-space-md">handshake</span>
+<span>Apply for support</span>
+</button>
+<button class="h-12 px-space-md rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface font-label-lg text-label-lg flex items-center justify-center gap-space-xs transition-colors" type="button">
+<span class="material-symbols-outlined text-space-md">info</span>
+<span>Details</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Additional Regional Support Row (Bento Strip) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md">
+<!-- Cervical Screening Hub -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-tertiary text-space-xl">medical_information</span>
+<span class="bg-tertiary-container/10 text-tertiary font-label-sm text-label-sm px-2 py-0.5 rounded-full">National Campaign</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface mt-2">Free Cervical Screening (HPV-DNA)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Offered free at all 502 public health centers for women aged 30–49 across Rwanda.</p>
+</div>
+<a class="mt-space-md font-label-md text-label-md text-primary font-semibold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+<span>Find your local health center</span>
+<span class="material-symbols-outlined text-space-md">arrow_forward</span>
+</a>
+</div>
+<!-- Radiotherapy Center Kanombe -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-primary text-space-xl">radar</span>
+<span class="bg-primary/10 text-primary font-label-sm text-label-sm px-2 py-0.5 rounded-full">Advanced Tech</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface mt-2">Rwanda Cancer Centre (RMH)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Modern linear accelerator radiotherapy in Kanombe. Co-financed under Mutuelle health coverage.</p>
+</div>
+<a class="mt-space-md font-label-md text-label-md text-primary font-semibold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+<span>Review equipment &amp; referrals</span>
+<span class="material-symbols-outlined text-space-md">arrow_forward</span>
+</a>
+</div>
+<!-- Community Survivor Support Circles -->
+<div class="bg-surface-container-lowest p-space-lg rounded-2xl shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="material-symbols-outlined text-secondary text-space-xl">groups_2</span>
+<span class="bg-secondary/10 text-secondary font-label-sm text-label-sm px-2 py-0.5 rounded-full">Weekly Meetups</span>
+</div>
+<h4 class="font-title-md text-title-md text-on-surface mt-2">Survivor &amp; Caregiver Circles</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Weekly mutual aid meetings in Kinyarwanda, English, and French. Kigali &amp; virtual attendance.</p>
+</div>
+<a class="mt-space-md font-label-md text-label-md text-secondary font-semibold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+<span>Join a support group</span>
+<span class="material-symbols-outlined text-space-md">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Emergency & 24/7 Helplines Banner -->
+<div class="relative w-full rounded-2xl overflow-hidden bg-primary-container text-on-primary p-space-lg md:p-space-xl shadow-lg">
+<!-- Subtle background glowing radial light -->
+<div class="absolute -right-16 -bottom-16 w-80 h-80 rounded-full bg-primary opacity-50 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="inline-flex items-center gap-space-xs bg-surface-container-lowest/15 backdrop-blur-sm px-space-sm py-1 rounded-full text-label-sm font-label-sm text-on-primary-container w-fit">
+<span class="w-2 h-2 rounded-full bg-secondary-container animate-ping"></span>
+<span>24/7 Free Immediate Assistance</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-primary">Need to talk to someone right now?</h3>
+<p class="font-body-md text-body-md text-on-primary-container/90">
+              You are never alone. Reach compassionate oncology nurses, counselors, and community advocates ready to explain symptoms, book urgent tests, or walk with you through every step.
+            </p>
+</div>
+<!-- Helpline CTA Buttons -->
+<div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-space-sm">
+<!-- Toll Free Button -->
+<a class="h-14 px-space-lg rounded-xl bg-surface-container-lowest text-primary hover:bg-surface-container font-label-lg text-label-lg flex items-center justify-center gap-space-sm shadow-md transition-all active:scale-98" href="tel:114">
+<span class="material-symbols-outlined text-space-lg text-secondary" style="font-variation-settings: 'FILL' 1;">phone_in_talk</span>
+<div class="flex flex-col text-left">
+<span class="font-label-sm text-label-sm text-on-surface-variant leading-none">Rwanda Biomedical Centre</span>
+<span class="font-headline-sm text-headline-sm text-on-surface leading-tight">Dial 114 (Toll-Free)</span>
+</div>
+</a>
+<!-- WhatsApp Counselor -->
+<a class="h-14 px-space-lg rounded-xl bg-tertiary-container hover:bg-tertiary text-on-tertiary font-label-lg text-label-lg flex items-center justify-center gap-space-sm shadow-md transition-all active:scale-98" href="https://wa.me/250788000000" rel="noopener noreferrer" target="_blank">
+<span class="material-symbols-outlined text-space-lg">chat</span>
+<div class="flex flex-col text-left">
+<span class="font-label-sm text-label-sm text-on-tertiary/80 leading-none">Confidential Chat</span>
+<span class="font-headline-sm text-headline-sm text-on-tertiary leading-tight">Live WhatsApp Nurse</span>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple interactive filter chip toggle behavior
+  document.addEventListener('DOMContentLoaded', () => {
+    const chips = document.querySelectorAll('.filter-chip');
+    chips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        chips.forEach(c => {
+          c.classList.remove('bg-primary-container', 'text-on-primary', 'shadow-sm');
+          c.classList.add('bg-surface-container-low', 'text-on-surface-variant');
+        });
+        chip.classList.remove('bg-surface-container-low', 'text-on-surface-variant');
+        chip.classList.add('bg-primary-container', 'text-on-primary', 'shadow-sm');
+      });
+    });
+
+    // Realtime search filtering demonstration
+    const searchInput = document.getElementById('helpSearchInput');
+    const cards = document.querySelectorAll('#providerCardsGrid > div');
+    
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const query = e.target.value.toLowerCase().trim();
+        cards.forEach(card => {
+          const cardText = card.innerText.toLowerCase();
+          if (!query || cardText.includes(query)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    }
+  });
+</script></main><footer class="w-full bg-surface-container-low border-t border-outline-variant/40 py-6"><div class="max-w-[1200px] mx-auto px-margin flex flex-col gap-space-md"><div class="flex flex-col md:flex-row items-center justify-between gap-space-md pb-space-sm"><div class="flex items-center gap-space-sm"><img alt="Menya Logo" class="h-6 w-auto object-contain opacity-80" src="https://lh3.googleusercontent.com/aida/AEtjO1VumdXcVJpGmaAteMUIl5054rjeSjRGX2gNPYkkmtP-DWjK9yZeAQEvz9vQHhY1C4NxtVdIF70c9EBgvP08UbubSyH-Tejj8MBXSv1BsPxzF10L9GpLaMTx216u7AbuYE_4blD1pCFQrvGUlZj187S-y99XuysBRwrdJQwSuacaiPHPRCFuQ0L_oVy3G4iS17H1VfaAikJ9JcqFMlrQzkw_3MRu3FOV2YBzJfW6Vhg7"/><p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl">Menya shares health information, not medical advice. Always consult a licensed health worker or local clinic.</p></div><nav class="flex items-center gap-space-lg"><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="learn-it" href="#">Knowledge Hub</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="share-it" href="#">Stories</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="find-help" href="#">Local Centers</a></nav></div><div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs border-t border-outline-variant/20 text-on-surface-variant font-label-sm text-label-sm"><p>© 2025 Menya Cancer Awareness Initiative. Developed in solidarity with Rwandan and African healthcare advocates.</p><div class="flex items-center gap-space-md"><span>Kigali, Rwanda</span><span>•</span><span>East Africa Community Health</span></div></div></div></footer></body></html>

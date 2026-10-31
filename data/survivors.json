@@ -1,0 +1,50 @@
+[
+  {
+    "id": "survivor-amina",
+    "name": "Amina K.",
+    "cancer": "breast",
+    "language": ["English"],
+    "country": "Rwanda",
+    "city": "Kigali",
+    "story": "I waited because I was afraid. A nurse at a Kigali clinic listened, and I started treatment. I still have hard days, but I am here.",
+    "voice_url": "",
+    "is_demo": true,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "survivor-jean",
+    "name": "Jean P.",
+    "cancer": "prostate",
+    "language": ["English"],
+    "country": "Rwanda",
+    "city": "Kigali",
+    "story": "I thought urine trouble was only age. My son took me to CHUK. Early checks made care possible. I talk to other men now so they do not stay silent.",
+    "voice_url": "",
+    "is_demo": true,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "survivor-claire",
+    "name": "Claire N.",
+    "cancer": "cervical",
+    "language": ["English"],
+    "country": "Rwanda",
+    "city": "Kigali",
+    "story": "Screening found a change before I felt sick. Treatment was scary, but the circle of women around me kept me going.",
+    "voice_url": "",
+    "is_demo": true,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "survivor-eric",
+    "name": "Eric M.",
+    "cancer": "colorectal",
+    "language": ["English"],
+    "country": "Rwanda",
+    "city": "Kigali",
+    "story": "I ignored blood in the stool until my sister insisted. I am recovering and I want others to ask for help sooner than I did.",
+    "voice_url": "",
+    "is_demo": true,
+    "review_note": "placeholder, needs review"
+  }
+]

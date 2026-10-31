@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&amp;family=Nunito+Sans:wght@700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-container-lowest": "#ffffff", "surface-variant": "#e8defa", "inverse-primary": "#cebdff", "on-tertiary-fixed-variant": "#005143", "error-container": "#ffdad6", "on-tertiary-container": "#85f5d9", "tertiary-container": "#00715f", "tertiary": "#005648", "outline": "#7a7584", "on-tertiary-fixed": "#00201a", "secondary-fixed": "#ffdad3", "on-primary-container": "#e7dcff", "surface-container-high": "#ede4ff", "on-tertiary": "#ffffff", "surface-tint": "#6749bc", "primary": "#5435a8", "on-error-container": "#93000a", "on-secondary-container": "#742413", "surface-container": "#f3eaff", "on-secondary": "#ffffff", "on-primary": "#ffffff", "on-error": "#ffffff", "primary-fixed-dim": "#cebdff", "primary-container": "#6d4fc2", "surface-container-highest": "#e8defa", "primary-fixed": "#e8ddff", "secondary-fixed-dim": "#ffb4a4", "tertiary-fixed": "#87f6db", "background": "#fdf7ff", "on-primary-fixed": "#21005e", "tertiary-fixed-dim": "#69dabf", "inverse-surface": "#332d42", "secondary": "#9d422f", "secondary-container": "#fd8c73", "on-primary-fixed-variant": "#4f2ea2", "on-secondary-fixed-variant": "#7e2b1a", "surface": "#fdf7ff", "on-surface-variant": "#494552", "surface-bright": "#fdf7ff", "error": "#ba1a1a", "on-background": "#1d182c", "inverse-on-surface": "#f5eeff", "outline-variant": "#cac4d4", "on-surface": "#1d182c", "on-secondary-fixed": "#3e0500", "surface-container-low": "#f8f1ff", "surface-dim": "#dfd6f2" }, "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, "spacing": { "margin-mobile": "1rem", "space-xs": "0.25rem", "gutter": "1.5rem", "gutter-mobile": "1rem", "margin": "2rem", "space-sm": "0.5rem", "space-lg": "1.5rem", "space-md": "1rem", "space-xl": "2rem" }, "fontFamily": { "headline-sm": ["Nunito Sans"], "headline-lg-mobile": ["Nunito Sans"], "display-mobile": ["Nunito Sans"], "label-md": ["Inter"], "body-lg": ["Inter"], "body-md": ["Inter"], "title-md": ["Nunito Sans"], "label-lg": ["Inter"], "body-sm": ["Inter"], "headline-lg": ["Nunito Sans"], "headline-md": ["Nunito Sans"], "label-sm": ["Inter"], "display": ["Nunito Sans"] }, "fontSize": { "headline-sm": ["20px", { "lineHeight": "28px", "fontWeight": "700" }], "headline-lg-mobile": ["26px", { "lineHeight": "34px", "letterSpacing": "0em", "fontWeight": "700" }], "display-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }], "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }], "body-md": ["16px", { "lineHeight": "25.6px", "fontWeight": "400" }], "title-md": ["18px", { "lineHeight": "26px", "fontWeight": "700" }], "label-lg": ["16px", { "lineHeight": "24px", "fontWeight": "600" }], "body-sm": ["14px", { "lineHeight": "22px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "42px", "letterSpacing": "-0.01em", "fontWeight": "700" }], "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "700" }], "label-sm": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }], "display": ["40px", { "lineHeight": "52px", "letterSpacing": "-0.02em", "fontWeight": "800" }] } } } }</script></head><body class="bg-surface font-body-md text-on-surface"><header class="fixed top-0 w-full z-50 bg-surface-container-lowest border-b border-outline-variant/40"><div class="h-[72px] max-w-[1200px] mx-auto px-margin flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-sm"><a class="flex items-center gap-space-sm" data-path="home" href="#"><img alt="Menya Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VumdXcVJpGmaAteMUIl5054rjeSjRGX2gNPYkkmtP-DWjK9yZeAQEvz9vQHhY1C4NxtVdIF70c9EBgvP08UbubSyH-Tejj8MBXSv1BsPxzF10L9GpLaMTx216u7AbuYE_4blD1pCFQrvGUlZj187S-y99XuysBRwrdJQwSuacaiPHPRCFuQ0L_oVy3G4iS17H1VfaAikJ9JcqFMlrQzkw_3MRu3FOV2YBzJfW6Vhg7"/><span class="font-title-md text-title-md text-primary font-bold tracking-tight">Menya</span></a></div><nav class="flex items-center gap-space-sm p-space-xs" data-active-classes="bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-xl shadow-sm"><a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all rounded-xl" data-path="learn-it" href="#">Learn it</a><a aria-current="page" class="px-space-md py-space-sm transition-all bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-xl shadow-sm" data-path="share-it" href="#">Share it</a><a class="px-space-md py-space-sm font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface hover:bg-surface-container transition-all rounded-xl" data-path="find-help" href="#">Find help</a></nav><div class="flex items-center gap-space-md"><div class="relative flex items-center gap-space-xs px-space-sm py-space-xs bg-surface-container-low rounded-xl text-on-surface-variant font-label-md text-label-md"><span class="material-symbols-outlined text-space-lg text-on-surface-variant">language</span><span>English</span><span class="material-symbols-outlined text-space-md text-on-surface-variant">expand_more</span></div><button aria-label="Notifications" class="relative p-space-xs rounded-full hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-space-lg">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-secondary"></span></button><div class="flex items-center pl-space-xs"><img alt="Profile" class="w-8 h-8 rounded-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRsZarBzsxjQ43RX5-ZmMbXoScbw_vfU6bfRgW9PxKvZcQAobjs256aqv0PVYw-20zsrwYzwFk9CuR7J5tH4r_f7Ie-LgPOAFJux31uFBIO8a5u_VYBtSFxxb91e0Z23LlucOac7g6YEymzcnlwJQi4meqFlx9ecLwQMhEns9hAbU2QdC7kbTY2cc8Mh6amcByj8vLhrnkRg8oUDa914T3CpqS4wbf3dPWTlGKR5lO"/></div></div></div></header><main class="w-full pt-[72px] bg-surface min-h-[calc(100vh-72px)]"><div class="flex flex-col w-full">
+<div class="w-full max-w-[1200px] mx-auto px-8 py-8 flex flex-col gap-10">
+<!-- Hero Affirmation Header -->
+<div class="flex flex-col gap-2 max-w-3xl">
+<div class="inline-flex items-center gap-2 self-start px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">diversity_1</span>
+<span>Peer-to-Peer Healing Network</span>
+</div>
+<h1 class="font-display text-display text-on-surface tracking-tight">
+        You don't have to go through this alone
+      </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
+        Connect one-on-one with African cancer survivors, caregivers, and empathetic peers who understand your journey.
+      </p>
+</div>
+<!-- Matchmaking Filter Form Card -->
+<section aria-labelledby="filter-heading" class="w-full bg-surface-container-lowest rounded-2xl p-6 shadow-sm border border-outline-variant/30 flex flex-col gap-6">
+<div class="flex items-center justify-between border-b border-outline-variant/20 pb-4">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded-xl bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">tune</span>
+</div>
+<div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface" id="filter-heading">Find a Compassionate Match</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Filter by identity, lived experience, and localized dialect</p>
+</div>
+</div>
+<span class="hidden sm:inline-flex text-label-sm font-label-sm text-tertiary bg-tertiary/10 px-3 py-1 rounded-full items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px]" style="font-variation-settings: 'FILL' 1;">verified</span> 100% Confidential
+        </span>
+</div>
+<!-- Form Grid -->
+<form class="flex flex-col gap-6" id="match-filter-form" onsubmit="event.preventDefault();">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- Who are you helping? -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1.5" for="helping-select">
+<span>Who are you helping?</span>
+</label>
+<div class="relative">
+<select class="w-full h-12 bg-surface-container-lowest text-on-surface border border-outline-variant rounded-xl px-4 appearance-none focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary-fixed cursor-pointer font-body-md text-body-md transition-all" id="helping-select">
+<option selected="" value="myself">Myself</option>
+<option value="parent">A parent</option>
+<option value="child">My child</option>
+<option value="partner">A partner</option>
+<option value="friend">A friend</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-on-surface-variant text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Cancer Type -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1.5" for="cancer-type">
+<span>Cancer type</span>
+</label>
+<div class="relative">
+<select class="w-full h-12 bg-surface-container-lowest text-on-surface border border-outline-variant rounded-xl px-4 appearance-none focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary-fixed cursor-pointer font-body-md text-body-md transition-all" id="cancer-type">
+<option selected="" value="cervical">Cervical Cancer</option>
+<option value="breast">Breast Cancer</option>
+<option value="prostate">Prostate Cancer</option>
+<option value="liver">Liver Cancer</option>
+<option value="colorectal">Colorectal Cancer</option>
+<option value="other">Other diagnosis</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-on-surface-variant text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Preferred Language -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1.5" for="preferred-lang">
+<span>Preferred language</span>
+</label>
+<div class="relative">
+<select class="w-full h-12 bg-surface-container-lowest text-on-surface border border-outline-variant rounded-xl px-4 appearance-none focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary-fixed cursor-pointer font-body-md text-body-md transition-all" id="preferred-lang">
+<option selected="" value="rw">Kinyarwanda</option>
+<option value="en">English</option>
+<option value="sw">Swahili</option>
+<option value="fr">French</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-on-surface-variant text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- Country & City -->
+<div class="flex flex-col gap-2">
+<label class="font-label-md text-label-md text-on-surface flex items-center gap-1.5" for="country-city">
+<span>Country &amp; City</span>
+</label>
+<div class="relative">
+<select class="w-full h-12 bg-surface-container-lowest text-on-surface border border-outline-variant rounded-xl px-4 appearance-none focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary-fixed cursor-pointer font-body-md text-body-md transition-all" id="country-city">
+<option selected="" value="kigali">Rwanda • Kigali</option>
+<option value="nairobi">Kenya • Nairobi</option>
+<option value="kampala">Uganda • Kampala</option>
+<option value="daressalaam">Tanzania • Dar es Salaam</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-3 pointer-events-none text-on-surface-variant text-[20px]">expand_more</span>
+</div>
+</div>
+</div>
+<!-- Quick filter pill chips & Submit -->
+<div class="flex flex-wrap items-center justify-between gap-4 pt-2">
+<div class="flex flex-wrap items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Looking for:</span>
+<button class="px-3 py-1.5 rounded-full text-label-sm font-label-sm bg-primary text-on-primary shadow-sm hover:opacity-95 transition-all" type="button">Survivors</button>
+<button class="px-3 py-1.5 rounded-full text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all" type="button">Caregivers</button>
+<button class="px-3 py-1.5 rounded-full text-label-sm font-label-sm bg-surface-container-high text-on-surface-variant hover:text-on-surface hover:bg-surface-variant transition-all" type="button">Nurses on Call</button>
+</div>
+<button class="h-12 px-8 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 transition-all shadow-md active:scale-95" id="search-btn" type="button">
+<span class="material-symbols-outlined text-[20px]">person_search</span>
+<span>Find my match</span>
+</button>
+</div>
+</form>
+</section>
+<!-- Top Match Header Indicator -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="h-2.5 w-2.5 rounded-full bg-tertiary animate-pulse"></span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Top Recommended Peer Match</h3>
+</div>
+<span class="font-label-md text-label-md text-on-surface-variant">98% profile compatibility</span>
+</div>
+<!-- Result: Survivor Profile Featured Card -->
+<article class="w-full bg-surface-container-lowest rounded-2xl p-6 sm:p-8 border-2 border-primary-fixed-dim shadow-[0_8px_24px_rgba(109,79,194,0.12)] flex flex-col lg:flex-row gap-8 relative overflow-hidden transition-all">
+<!-- Decorative Accent Gradient Blob -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-gradient-to-br from-primary-fixed/30 to-secondary-fixed/20 rounded-full blur-3xl pointer-events-none"></div>
+<!-- Left Column: Portrait & Stats -->
+<div class="flex flex-col items-center lg:items-start gap-4 flex-shrink-0">
+<div class="relative">
+<img class="w-28 h-28 sm:w-36 sm:h-36 rounded-2xl object-cover shadow-md" data-alt="A portrait of Grace Mutesi, an empowered and serene 38-year-old African Rwandan woman smiling warmly into the camera. She wears a vibrant modern yellow and violet African patterned scarf. Soft golden hour lighting radiates compassion and strength. Ultra-clear studio photography with a clean soft lilac background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3xTuSB9debopBk2xXbpEcxdJhFQDLghbExKPLa061XjwFBVAwVZectjKwzlDns-l3Gkfh7HAZinv0KlU3QTcOjDoVaNlJbheCZDbs6g0hIaLc76B3gqbK4GGs7DXuamPfuboqAwsqMbXBEpScUsgTrZY7LKATvdFQOoHsjAqHgbLV2NMzk0FnkXjw8KvG0vtn4hW74cmdoaOStOU9toEgS0KBojuNJtGdl23AvI5I"/>
+<span class="absolute -bottom-2 -right-2 p-1.5 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center shadow-sm" title="Verified Champion">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</span>
+</div>
+<div class="flex flex-col items-center lg:items-start text-center lg:text-left">
+<div class="flex items-center gap-1 text-tertiary font-label-md text-label-md font-semibold">
+<span class="material-symbols-outlined text-[16px]">volunteer_activism</span>
+<span>Grace Mutesi, 38</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Care Ambassador • Kigali</span>
+</div>
+<!-- Metric micro-badges -->
+<div class="w-full grid grid-cols-2 gap-2 pt-2 border-t border-outline-variant/30">
+<div class="bg-surface-container-low p-2 rounded-xl text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Helped</p>
+<p class="font-headline-sm text-headline-sm text-primary">64+</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Warriors</p>
+</div>
+<div class="bg-surface-container-low p-2 rounded-xl text-center">
+<p class="font-label-sm text-label-sm text-on-surface-variant">Response</p>
+<p class="font-headline-sm text-headline-sm text-tertiary">&lt; 2 hrs</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Average</p>
+</div>
+</div>
+</div>
+<!-- Right Column: Details, Reason, Voice Note, Actions -->
+<div class="flex flex-col justify-between flex-grow gap-6">
+<div class="flex flex-col gap-4">
+<!-- Top Row: Name, Survived Badge, Tags -->
+<div class="flex flex-wrap items-start justify-between gap-3">
+<div>
+<div class="flex flex-wrap items-center gap-2">
+<h4 class="font-headline-md text-headline-md text-on-surface">Grace Mutesi</h4>
+<span class="px-3 py-1 rounded-full bg-tertiary/10 text-tertiary font-label-sm text-label-sm font-semibold flex items-center gap-1 border border-tertiary/20">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                  Verified Survivor
+                </span>
+</div>
+<p class="font-title-md text-title-md text-secondary font-bold pt-1">
+                Survived Cervical Cancer <span class="text-on-surface-variant font-normal">• 3 years cancer-free</span>
+</p>
+</div>
+<!-- Language & Location Badges -->
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-3 py-1 rounded-xl bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">translate</span>
+                Kinyarwanda &amp; English
+              </span>
+<span class="px-3 py-1 rounded-xl bg-surface-container text-on-surface-variant font-label-sm text-label-sm flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                Kigali, Rwanda
+              </span>
+</div>
+</div>
+<!-- Hope Coral Match Reason Highlight Box -->
+<div class="bg-secondary-fixed/50 rounded-xl p-4 flex items-start gap-3 border border-secondary-container/40">
+<span class="material-symbols-outlined text-secondary text-[22px] flex-shrink-0 mt-0.5" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider text-secondary">Why you two match</span>
+<p class="font-body-md text-body-md text-on-secondary-container">
+                Grace survived cervical cancer and speaks Kinyarwanda — she was diagnosed at age 35 just like you.
+              </p>
+</div>
+</div>
+<!-- Short Story Quote -->
+<blockquote class="font-body-md text-body-md text-on-surface italic leading-relaxed border-l-4 border-primary pl-4 py-1 bg-surface-container-low/60 rounded-r-xl">
+            “When the doctor said cancer, my world stopped. I thought of my two daughters. But with early radiation and our community, I beat it. I am here to hold your hand through every appointment.”
+          </blockquote>
+<!-- Interactive Voice Message Player Component -->
+<div class="bg-surface-container-low rounded-xl p-4 flex flex-col sm:flex-row items-center gap-4">
+<button aria-label="Play audio message" class="w-12 h-12 rounded-full bg-primary hover:bg-primary-container text-on-primary flex items-center justify-center flex-shrink-0 shadow transition-transform active:scale-95" id="voice-play-btn" type="button">
+<span class="material-symbols-outlined text-[24px]" id="play-icon">play_arrow</span>
+</button>
+<div class="flex flex-col w-full gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">mic</span>
+                  Listen to Grace's 1-minute welcome message (Kinyarwanda)
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono" id="audio-duration">0:42 / 1:04</span>
+</div>
+<!-- Animated Wave Visualization -->
+<div class="flex items-center gap-1 h-7 w-full overflow-hidden px-1">
+<span class="w-1 h-3 bg-primary rounded-full transition-all duration-300"></span>
+<span class="w-1 h-5 bg-primary rounded-full transition-all duration-300"></span>
+<span class="w-1 h-7 bg-primary rounded-full transition-all duration-300"></span>
+<span class="w-1 h-4 bg-primary rounded-full transition-all duration-300"></span>
+<span class="w-1 h-6 bg-primary rounded-full transition-all duration-300"></span>
+<span class="w-1 h-3 bg-primary rounded-full transition-all duration-300"></span>
+<span class="w-1 h-5 bg-primary rounded-full transition-all duration-300"></span>
+<span class="w-1 h-7 bg-primary-fixed-dim rounded-full transition-all duration-300"></span>
+<span class="w-1 h-4 bg-primary-fixed-dim rounded-full transition-all duration-300"></span>
+<span class="w-1 h-6 bg-primary-fixed-dim rounded-full transition-all duration-300"></span>
+<span class="w-1 h-2 bg-primary-fixed-dim rounded-full transition-all duration-300"></span>
+<span class="w-1 h-5 bg-primary-fixed-dim rounded-full transition-all duration-300"></span>
+<span class="w-1 h-3 bg-primary-fixed-dim rounded-full transition-all duration-300"></span>
+<span class="w-1 h-6 bg-primary-fixed-dim rounded-full transition-all duration-300"></span>
+<span class="w-1 h-4 bg-primary-fixed-dim rounded-full transition-all duration-300"></span>
+<span class="w-1 h-2 bg-primary-fixed-dim rounded-full transition-all duration-300"></span>
+<span class="w-1 h-5 bg-primary-fixed-dim rounded-full transition-all duration-300"></span>
+<span class="w-1 h-7 bg-primary-fixed-dim rounded-full transition-all duration-300"></span>
+<span class="w-1 h-3 bg-primary-fixed-dim rounded-full transition-all duration-300"></span>
+<span class="w-1 h-4 bg-primary-fixed-dim rounded-full transition-all duration-300"></span>
+<span class="w-1 h-2 bg-primary-fixed-dim rounded-full transition-all duration-300"></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col sm:flex-row items-center gap-3 pt-2">
+<button class="w-full sm:w-auto h-12 px-8 rounded-xl bg-primary hover:bg-primary-container text-on-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 transition-all shadow-md active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">chat</span>
+<span>Message Grace</span>
+</button>
+<button class="w-full sm:w-auto h-12 px-8 rounded-xl bg-surface-container hover:bg-surface-container-high text-primary font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 transition-all border border-primary-fixed-dim active:scale-95" type="button">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span>Request a 15-min phone call</span>
+</button>
+<span class="text-on-surface-variant font-body-sm text-body-sm sm:ml-auto flex items-center gap-1.5 text-center">
+<span class="material-symbols-outlined text-[16px] text-tertiary">lock</span>
+            Encrypted &amp; Volunteer Moderated
+          </span>
+</div>
+</div>
+</article>
+<!-- Support Groups Section: Circles of Hope -->
+<section aria-labelledby="circles-heading" class="flex flex-col gap-6 pt-4">
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-2">
+<div>
+<div class="inline-flex items-center gap-1.5 text-secondary font-label-md text-label-md font-bold mb-1">
+<span class="material-symbols-outlined text-[18px]">forum</span>
+<span>Community Safe Spaces</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface" id="circles-heading">
+            Circles of Hope
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+            Connect in verified regional peer groups moderated by oncology-trained social workers.
+          </p>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-on-surface-variant">All circles require safe conduct agreement</span>
+</div>
+</div>
+<!-- 3 Community Cards Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1: Kigali Women Cancer Circle -->
+<article class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/30 shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-6 group">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed/50 text-secondary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">groups_2</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">public</span> Kigali, RW
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                Kigali Women Cancer Circle
+              </h3>
+<p class="font-label-md text-label-md text-secondary font-medium mt-1">
+                340 active members • Daily encouragement
+              </p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              A gentle sisterhood focused on emotional resilience, overcoming chemo side effects, prayer, and family balance.
+            </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 flex flex-col gap-3">
+<button class="w-full h-12 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-[#ffffff] font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm transition-transform active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">chat</span>
+<span>Join on WhatsApp</span>
+</button>
+<span class="text-center font-label-sm text-label-sm text-on-surface-variant">Meets virtually every Tuesday 7:00 PM CAT</span>
+</div>
+</article>
+<!-- Card 2: Caregivers Across Rwanda -->
+<article class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/30 shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-6 group">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-tertiary-container/10 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">vital_signs</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">public</span> Rwanda-wide
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                Caregivers Across Rwanda
+              </h3>
+<p class="font-label-md text-label-md text-tertiary font-medium mt-1">
+                180 active members • Care guidance
+              </p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Practical tips for feeding, fatigue management, navigating hospital bureaucracy, and fighting caregiver burnout.
+            </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 flex flex-col gap-3">
+<button class="w-full h-12 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-[#ffffff] font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm transition-transform active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">chat</span>
+<span>Join on WhatsApp</span>
+</button>
+<span class="text-center font-label-sm text-label-sm text-on-surface-variant">Includes nutritionists &amp; palliative nurses</span>
+</div>
+</article>
+<!-- Card 3: Young Warriors Network (Under 35) -->
+<article class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/30 shadow-sm hover:shadow-md transition-all flex flex-col justify-between gap-6 group">
+<div class="flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[26px]">psychology_alt</span>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">public</span> East Africa
+              </span>
+</div>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                Young Warriors Network
+              </h3>
+<p class="font-label-md text-label-md text-primary font-medium mt-1">
+                95 members • Ages 18 – 35
+              </p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+              Addressing cancer in early adulthood: careers, fertility, body changes, dating, and celebrating life after treatment.
+            </p>
+</div>
+<div class="pt-4 border-t border-outline-variant/20 flex flex-col gap-3">
+<button class="w-full h-12 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] text-[#ffffff] font-label-lg text-label-lg font-bold flex items-center justify-center gap-2 shadow-sm transition-transform active:scale-95" type="button">
+<span class="material-symbols-outlined text-[22px]">chat</span>
+<span>Join on WhatsApp</span>
+</button>
+<span class="text-center font-label-sm text-label-sm text-on-surface-variant">Active peer voice notes &amp; meetups</span>
+</div>
+</article>
+</div>
+</section>
+<!-- Community Connection Reassurance Ribbon -->
+<div class="w-full bg-surface-container rounded-2xl p-6 sm:p-8 flex flex-col md:flex-row items-center justify-between gap-6 relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-2 bg-secondary"></div>
+<div class="flex items-start gap-4 pl-2">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary flex-shrink-0">
+<span class="material-symbols-outlined text-[28px]">volunteer_activism</span>
+</div>
+<div class="flex flex-col gap-1">
+<h4 class="font-title-md text-title-md text-on-surface">Are you a cancer survivor or registered caregiver?</h4>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+            Lend your voice and hope. Join over 420 verified champions sharing their lived strength with newly diagnosed individuals across Rwanda.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-3 flex-shrink-0 w-full sm:w-auto">
+<button class="w-full sm:w-auto h-12 px-6 rounded-xl bg-secondary hover:bg-secondary/90 text-on-secondary font-label-lg text-label-lg font-bold shadow-sm transition-transform active:scale-95 flex items-center justify-center gap-2" type="button">
+<span class="material-symbols-outlined text-[20px]">add_moderator</span>
+<span>Become a Peer Champion</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Micro-interactions Script -->
+<script>
+    (function initShareItScreen() {
+      // Audio waveform and play toggle interaction
+      const playBtn = document.getElementById('voice-play-btn');
+      const playIcon = document.getElementById('play-icon');
+      const timeDisplay = document.getElementById('audio-duration');
+      let isPlaying = false;
+      let intervalId = null;
+      let currentSeconds = 42;
+
+      if (playBtn && playIcon) {
+        playBtn.addEventListener('click', () => {
+          isPlaying = !isPlaying;
+          if (isPlaying) {
+            playIcon.textContent = 'pause';
+            playBtn.classList.add('ring-4', 'ring-primary-fixed');
+            intervalId = setInterval(() => {
+              if (currentSeconds < 64) {
+                currentSeconds++;
+                const mins = Math.floor(currentSeconds / 60);
+                const secs = currentSeconds % 60;
+                timeDisplay.textContent = `${mins}:${secs < 10 ? '0' : ''}${secs} / 1:04`;
+              } else {
+                currentSeconds = 0;
+              }
+            }, 1000);
+          } else {
+            playIcon.textContent = 'play_arrow';
+            playBtn.classList.remove('ring-4', 'ring-primary-fixed');
+            clearInterval(intervalId);
+          }
+        });
+      }
+
+      // Match filter button feedback
+      const searchBtn = document.getElementById('search-btn');
+      if (searchBtn) {
+        searchBtn.addEventListener('click', () => {
+          const originalText = searchBtn.innerHTML;
+          searchBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[20px]">progress_activity</span> Searching...';
+          setTimeout(() => {
+            searchBtn.innerHTML = originalText;
+          }, 600);
+        });
+      }
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-low border-t border-outline-variant/40 py-6"><div class="max-w-[1200px] mx-auto px-margin flex flex-col gap-space-md"><div class="flex flex-col md:flex-row items-center justify-between gap-space-md pb-space-sm"><div class="flex items-center gap-space-sm"><img alt="Menya Logo" class="h-6 w-auto object-contain opacity-80" src="https://lh3.googleusercontent.com/aida/AEtjO1VumdXcVJpGmaAteMUIl5054rjeSjRGX2gNPYkkmtP-DWjK9yZeAQEvz9vQHhY1C4NxtVdIF70c9EBgvP08UbubSyH-Tejj8MBXSv1BsPxzF10L9GpLaMTx216u7AbuYE_4blD1pCFQrvGUlZj187S-y99XuysBRwrdJQwSuacaiPHPRCFuQ0L_oVy3G4iS17H1VfaAikJ9JcqFMlrQzkw_3MRu3FOV2YBzJfW6Vhg7"/><p class="font-body-sm text-body-sm text-on-surface-variant max-w-2xl">Menya shares health information, not medical advice. Always consult a licensed health worker or local clinic.</p></div><nav class="flex items-center gap-space-lg"><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="learn-it" href="#">Knowledge Hub</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="share-it" href="#">Stories</a><a class="font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface transition-colors" data-path="find-help" href="#">Local Centers</a></nav></div><div class="flex flex-col sm:flex-row items-center justify-between gap-space-sm pt-space-xs border-t border-outline-variant/20 text-on-surface-variant font-label-sm text-label-sm"><p>© 2025 Menya Cancer Awareness Initiative. Developed in solidarity with Rwandan and African healthcare advocates.</p><div class="flex items-center gap-space-md"><span>Kigali, Rwanda</span><span>•</span><span>East Africa Community Health</span></div></div></div></footer></body></html>

@@ -1,0 +1,41 @@
+[
+  {
+    "id": "group-kigali-breast",
+    "name": "Kigali Breast Care Circle",
+    "cancer": "breast",
+    "language": "English",
+    "city": "Kigali",
+    "country": "Rwanda",
+    "whatsapp_link": "https://wa.me/250700000001",
+    "lat": -1.9441,
+    "lng": 30.0619,
+    "moderator": "Demo moderator",
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "group-kigali-cervical",
+    "name": "Gasabo Cervical Support",
+    "cancer": "cervical",
+    "language": "English",
+    "city": "Kigali",
+    "country": "Rwanda",
+    "whatsapp_link": "https://wa.me/250700000002",
+    "lat": -1.932,
+    "lng": 30.106,
+    "moderator": "Demo moderator",
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "group-kigali-all",
+    "name": "Menya All-Cancers Evening Circle",
+    "cancer": "general",
+    "language": "English",
+    "city": "Kigali",
+    "country": "Rwanda",
+    "whatsapp_link": "https://wa.me/250700000003",
+    "lat": -1.958,
+    "lng": 30.112,
+    "moderator": "Demo moderator",
+    "review_note": "placeholder, needs review"
+  }
+]

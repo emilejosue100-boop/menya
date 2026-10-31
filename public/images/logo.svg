@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 40" width="150" height="40" role="img" aria-label="Menya">
+  <rect width="40" height="40" rx="12" fill="#EDE7FB"/>
+  <path d="M20 7c-3.6 0-6.5 2.9-6.5 6.5 0 2.6 1.7 5.4 3.7 8.2L11 31.6l3.5 1.8 5.5-8.3 5.5 8.3 3.5-1.8-6.2-9.9c2-2.8 3.7-5.6 3.7-8.2C26.5 9.9 23.6 7 20 7zm0 3.5c1.6 0 3 1.4 3 3 0 1.5-1.2 3.7-3 6.3-1.8-2.6-3-4.8-3-6.3 0-1.6 1.4-3 3-3z" fill="#6D4FC2"/>
+  <circle cx="29.5" cy="10.5" r="2.5" fill="#F2836B"/>
+  <text x="50" y="28" font-family="Nunito, 'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#1F1A2E" letter-spacing="-0.3">Menya</text>
+</svg>

@@ -1,0 +1,72 @@
+[
+  {
+    "id": "org-chuk",
+    "name": "University Teaching Hospital of Kigali (CHUK)",
+    "offers": ["screening", "treatment", "support"],
+    "who_qualifies": "People referred for specialist care in Kigali.",
+    "how_to_apply": "Go to the casualty or outpatient desk, or arrive with a referral letter.",
+    "country": "Rwanda",
+    "city": "Kigali",
+    "lat": -1.9586,
+    "lng": 30.0614,
+    "website": "https://chuk.rw",
+    "verified": true,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "org-rbc",
+    "name": "Rwanda Biomedical Centre",
+    "offers": ["screening", "vaccines", "support"],
+    "who_qualifies": "National programmes; ask your local health centre.",
+    "how_to_apply": "Ask a community health worker or district hospital about current campaigns.",
+    "country": "Rwanda",
+    "city": "Kigali",
+    "lat": -1.9437,
+    "lng": 30.0594,
+    "website": "https://rbc.gov.rw",
+    "verified": true,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "org-kfh",
+    "name": "King Faisal Hospital Kigali",
+    "offers": ["screening", "treatment"],
+    "who_qualifies": "Patients who can book oncology and diagnostic services.",
+    "how_to_apply": "Call the hospital switchboard or visit the outpatient department.",
+    "country": "Rwanda",
+    "city": "Kigali",
+    "lat": -1.9448,
+    "lng": 30.0922,
+    "website": "https://kfh.rw",
+    "verified": true,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "org-butaro",
+    "name": "Butaro Cancer Centre of Excellence (Kigali liaison)",
+    "offers": ["treatment", "support"],
+    "who_qualifies": "People who need cancer treatment; many are referred from district hospitals.",
+    "how_to_apply": "Ask your district hospital for a referral. This Kigali pin is a placeholder liaison point.",
+    "country": "Rwanda",
+    "city": "Kigali",
+    "lat": -1.95,
+    "lng": 30.06,
+    "website": "https://www.pih.org",
+    "verified": true,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "org-mutuelle-kacyiru",
+    "name": "Kacyiru Health Centre",
+    "offers": ["screening", "vaccines", "free drugs"],
+    "who_qualifies": "People living nearby, including Mutuelle de Santé holders.",
+    "how_to_apply": "Bring your Mutuelle card or national ID to the reception desk.",
+    "country": "Rwanda",
+    "city": "Kigali",
+    "lat": -1.9356,
+    "lng": 30.0806,
+    "website": "",
+    "verified": true,
+    "review_note": "placeholder, needs review"
+  }
+]

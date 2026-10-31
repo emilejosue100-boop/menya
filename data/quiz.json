@@ -1,0 +1,122 @@
+[
+  {
+    "id": "breast-q1",
+    "cancer": "breast",
+    "question": "What should you do if you find a new lump in the breast?",
+    "choices": ["Wait one year", "See a health worker", "Rub herbal oil only"],
+    "answer": 1,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "breast-q2",
+    "cancer": "breast",
+    "question": "Is every breast lump cancer?",
+    "choices": ["Yes, always", "No, but every new lump should be checked", "Only in older women"],
+    "answer": 1,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "breast-q3",
+    "cancer": "breast",
+    "question": "Breast cancer is caused by a curse.",
+    "choices": ["True", "False", "Only in some families"],
+    "answer": 1,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "cervical-q1",
+    "cancer": "cervical",
+    "question": "Can you need a cervical screening even if you feel well?",
+    "choices": ["No", "Yes", "Only after childbirth"],
+    "answer": 1,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "cervical-q2",
+    "cancer": "cervical",
+    "question": "What helps prevent most cervical cancer?",
+    "choices": ["HPV vaccine and screening", "Drinking more tea", "Avoiding cold weather"],
+    "answer": 0,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "cervical-q3",
+    "cancer": "cervical",
+    "question": "Unusual bleeding after sex should be ignored.",
+    "choices": ["True", "False", "Only if it happens once a year"],
+    "answer": 1,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "prostate-q1",
+    "cancer": "prostate",
+    "question": "Who should talk to a health worker about prostate checks?",
+    "choices": ["Only boys under 18", "Men, especially from about age 50, or earlier with family history", "Only women"],
+    "answer": 1,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "prostate-q2",
+    "cancer": "prostate",
+    "question": "Trouble passing urine is always just old age.",
+    "choices": ["True", "False — it should be checked", "It never matters"],
+    "answer": 1,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "prostate-q3",
+    "cancer": "prostate",
+    "question": "It is okay for men to ask a clinic about urine changes.",
+    "choices": ["True", "False", "Only in private hospitals"],
+    "answer": 0,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "liver-q1",
+    "cancer": "liver",
+    "question": "Yellow eyes or skin should be checked by a health worker.",
+    "choices": ["True", "False", "Only in babies"],
+    "answer": 0,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "liver-q2",
+    "cancer": "liver",
+    "question": "Which vaccine helps lower the risk of liver cancer?",
+    "choices": ["Hepatitis B vaccine", "Tetanus only", "There is no vaccine"],
+    "answer": 0,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "liver-q3",
+    "cancer": "liver",
+    "question": "Damp, mouldy groundnuts and maize are safe to eat in large amounts.",
+    "choices": ["True", "False — mould can harm the liver", "Only if cooked twice"],
+    "answer": 1,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "colorectal-q1",
+    "cancer": "colorectal",
+    "question": "Blood in the stool should be checked.",
+    "choices": ["Never", "Yes, see a health worker", "Only in children"],
+    "answer": 1,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "colorectal-q2",
+    "cancer": "colorectal",
+    "question": "A lasting change in bowel habits can be a reason to visit a clinic.",
+    "choices": ["True", "False", "Only after two years"],
+    "answer": 0,
+    "review_note": "placeholder, needs review"
+  },
+  {
+    "id": "colorectal-q3",
+    "cancer": "colorectal",
+    "question": "Colorectal cancer never happens in Africa.",
+    "choices": ["True", "False", "Only in coastal cities"],
+    "answer": 1,
+    "review_note": "placeholder, needs review"
+  }
+]
